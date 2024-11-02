@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e82139b3bae6212439ea1e85ad29678b
+timeCreated: 1502753314
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 97945
+  packageName: Farm Animals Set
+  packageVersion: 1.0
+  assetPath: Assets/VertexColorFarmAnimals/Prefabs/SheepWhite.prefab
+  uploadId: 195698

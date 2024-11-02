@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b83d3bf75db8f704fb67e55cf64a537f
+timeCreated: 1502749475
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 97945
+  packageName: Farm Animals Set
+  packageVersion: 1.0
+  assetPath: Assets/VertexColorFarmAnimals/Materials/VertexColorUnlit.mat
+  uploadId: 195698

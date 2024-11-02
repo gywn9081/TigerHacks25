@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3b1e3e9155d404942bc65d9aa80120ba
+timeCreated: 1502753278
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 97945
+  packageName: Farm Animals Set
+  packageVersion: 1.0
+  assetPath: Assets/VertexColorFarmAnimals/Prefabs/ChickenBrown.prefab
+  uploadId: 195698

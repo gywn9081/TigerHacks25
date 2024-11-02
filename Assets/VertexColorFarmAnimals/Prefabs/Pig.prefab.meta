@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: de6abd774f85e18408346a3233418242
+timeCreated: 1502753337
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 97945
+  packageName: Farm Animals Set
+  packageVersion: 1.0
+  assetPath: Assets/VertexColorFarmAnimals/Prefabs/Pig.prefab
+  uploadId: 195698

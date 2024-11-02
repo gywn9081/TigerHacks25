@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 32026357c04e0e944835774b42e3c1b7
+timeCreated: 1502753350
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 97945
+  packageName: Farm Animals Set
+  packageVersion: 1.0
+  assetPath: Assets/VertexColorFarmAnimals/Prefabs/DuckWhite.prefab
+  uploadId: 195698
