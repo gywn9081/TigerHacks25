@@ -17,11 +17,14 @@ public class PlayerController : MonoBehaviour
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
     public bool canMove = true;
+    public Animator animator;
 
     CharacterController characterController;
 
 void Start()
 {
+    animator = GetComponent<Animator>();
+    animator.SetBool("isMoving", false);
     characterController = GetComponent<CharacterController>();
     Cursor.lockState = CursorLockMode.Locked;
     Cursor.visible = false;
@@ -39,10 +42,27 @@ void Update()
     float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
     float movementDirectionY = moveDirection.y;
     moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+    if (moveDirection != Vector3.zero)
+    {
+        animator.SetBool("isMoving", true);
+        if (isRunning == true)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
+    }
+    else
+    {
+        animator.SetBool("isMoving", false);
+    }
 
     #endregion
 
     #region Handles jumping
+
     if(Input.GetButton("Jump") && canMove && characterController.isGrounded)
     {
         moveDirection.y = jumpPower; 
@@ -50,6 +70,23 @@ void Update()
     else
     {
         moveDirection.y = movementDirectionY;
+    }
+
+    if(characterController.isGrounded == true)
+    {
+        animator.SetBool("isJumping", false);
+    }
+    else
+    {
+        if(isRunning == true)
+        {
+            animator.SetBool("isRunJumping", true);
+        }
+        else
+        {
+            animator.SetBool("isRunJumping", false);
+            animator.SetBool("isJumping", true);
+        }
     }
 
     if(!characterController.isGrounded)
