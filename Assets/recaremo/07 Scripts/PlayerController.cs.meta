@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 965725c87ba19dd48a22f196bc7c0822
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277395
+  packageName: RMP - House v03 - Basic 1/URP
+  packageVersion: 1.0.4
+  assetPath: Assets/recaremo/07 Scripts/PlayerController.cs
+  uploadId: 665964
