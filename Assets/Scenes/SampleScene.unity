@@ -569,7 +569,9 @@ MonoBehaviour:
   - {fileID: 115020, guid: a0c53a09e4a37b5409b1248ebce2c376, type: 3}
   - {fileID: 152404, guid: 5037d6ea184d2f640bf78dcf9894a269, type: 3}
   - {fileID: 166856, guid: 99a48108c5a1932488c06e519f6097f4, type: 3}
-  - {fileID: 168064, guid: fb8ae0828a555f74996970b8d0495f15, type: 3}
+  - {fileID: 166966, guid: 78c29697749a6d44e964f9a0cf83d77a, type: 3}
+  - {fileID: 198980, guid: 55ca4401075700d46a23ae8179a79579, type: 3}
+  - {fileID: 104588, guid: 702740a5e4ac1ee40a1888d3b62faa91, type: 3}
   numberOfTrees: 1000
   terrain: {fileID: 1274841161}
 --- !u!4 &2058337553
@@ -582,7 +584,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
