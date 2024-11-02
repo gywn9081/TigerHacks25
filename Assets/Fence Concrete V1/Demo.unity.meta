@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 445fe042920be36489c770704c571b30
+timeCreated: 1535114959
+licenseType: Store
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 123998
+  packageName: Fence Concrete V1
+  packageVersion: 1.0
+  assetPath: Assets/Fence Concrete V1/Demo.unity
+  uploadId: 263136

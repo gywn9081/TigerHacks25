@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 59e7aa463e9c4e34d9ffb94cd7111896
+timeCreated: 1535114410
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 123998
+  packageName: Fence Concrete V1
+  packageVersion: 1.0
+  assetPath: Assets/Fence Concrete V1/Prefabs/FenceConcrete03.prefab
+  uploadId: 263136
