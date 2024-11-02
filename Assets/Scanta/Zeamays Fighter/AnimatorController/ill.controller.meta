@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8d68026cfd41c4b659996974518ab817
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168602
+  packageName: Zeamays Fighter
+  packageVersion: 1.0
+  assetPath: Assets/Scanta/Zeamays Fighter/AnimatorController/ill.controller
+  uploadId: 367661
