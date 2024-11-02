@@ -540,6 +540,64 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   maxTries: 0
+--- !u!1 &2003236053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2003236055}
+  - component: {fileID: 2003236054}
+  m_Layer: 0
+  m_Name: Rocks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2003236054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003236053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528b8c58a08b2e8168057d3b5157a184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rockPrefabs:
+  - {fileID: 100000, guid: 6425f5e52f03e4340a3afa5f62f57a0d, type: 3}
+  - {fileID: 100000, guid: e6630d62478f89847ba57d087ab513c5, type: 3}
+  - {fileID: 100000, guid: b8ebafa78dff0064cb20deada72cb631, type: 3}
+  - {fileID: 100000, guid: 08d02c187472d684096f88c67beb6890, type: 3}
+  - {fileID: 100000, guid: ee344ff51e4ffbb41949e122c861e46d, type: 3}
+  - {fileID: 100000, guid: 815ec0c049d4ec849bd4960c32e13ec2, type: 3}
+  numberOfRocks: 100
+  terrain: {fileID: 0}
+  radiusMultiplier: 1
+  spawnLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  maxTries: 40
+--- !u!4 &2003236055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003236053}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -409.7531, y: -424.88174, z: 626.56433}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2058337551
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,3 +689,4 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 1274841162}
   - {fileID: 2058337553}
+  - {fileID: 2003236055}
