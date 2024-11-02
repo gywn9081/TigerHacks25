@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ffa9332db9f5c4222a84f8dd54c33688
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168602
+  packageName: Zeamays Fighter
+  packageVersion: 1.0
+  assetPath: Assets/Scanta/Zeamays Fighter/AnimatorController/StandingUp.controller
+  uploadId: 367661

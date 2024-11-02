@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ca248606fcec44d3e8319b2765f45c74
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168602
+  packageName: Zeamays Fighter
+  packageVersion: 1.0
+  assetPath: Assets/Scanta/Zeamays Fighter/AnimatorController/Death.controller
+  uploadId: 367661
