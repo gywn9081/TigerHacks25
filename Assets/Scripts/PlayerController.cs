@@ -18,8 +18,34 @@ public class PlayerController : MonoBehaviour
     float rotationX = 0;
     public bool canMove = true;
     public Animator animator;
-
     CharacterController characterController;
+
+    public int returnSpeed = 200;
+
+void CheckPlayer()
+{
+    if (transform.position.y < -100) {
+        characterController.enabled = false;
+        characterController.transform.position = new Vector3(10f, 10f, 35f);
+        characterController.enabled = true;
+    }
+}
+
+void MoveTowards(Vector3 location) {
+    var cc = GetComponent<CharacterController>();
+    var offset = location - transform.position;
+    //Get the difference.
+    if(offset.magnitude > 1f) {
+    //If we're further away than .1 unit, move towards the target.
+    //The minimum allowable tolerance varies with the speed of the object and the framerate. 
+    // 2 * tolerance must be >= moveSpeed / framerate or the object will jump right over the stop.
+        offset = offset.normalized * returnSpeed;
+        //normalize it and account for movement speed.
+        cc.Move(offset * Time.deltaTime);
+        //actually move the character.
+    }
+}
+
 
 void Start()
 {
@@ -108,6 +134,6 @@ void Update()
 
         #endregion    
     }
-    
+    CheckPlayer();
 }
 }
