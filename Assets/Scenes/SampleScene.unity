@@ -570,19 +570,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockPrefabs:
-  - {fileID: 100000, guid: 6425f5e52f03e4340a3afa5f62f57a0d, type: 3}
-  - {fileID: 100000, guid: e6630d62478f89847ba57d087ab513c5, type: 3}
-  - {fileID: 100000, guid: b8ebafa78dff0064cb20deada72cb631, type: 3}
-  - {fileID: 100000, guid: 08d02c187472d684096f88c67beb6890, type: 3}
-  - {fileID: 100000, guid: ee344ff51e4ffbb41949e122c861e46d, type: 3}
-  - {fileID: 100000, guid: 815ec0c049d4ec849bd4960c32e13ec2, type: 3}
+  - {fileID: 108756, guid: 2d521608fcf07c346b5e2ed4049aa717, type: 3}
+  - {fileID: 139742, guid: e9cb95ee3e55d914bbd4e5eb2d0a510c, type: 3}
+  - {fileID: 183960, guid: 491333d4c0bd88148813a9dde7fe955b, type: 3}
+  - {fileID: 126190, guid: be320b6d231cacc4894038f2c3375674, type: 3}
+  - {fileID: 110398, guid: f584b275cfb132f48a2ec91fd9d1b576, type: 3}
+  - {fileID: 174596, guid: 41dcf1459594f434a8a9bae6ae03eab0, type: 3}
   numberOfRocks: 100
-  terrain: {fileID: 0}
-  radiusMultiplier: 1
+  terrain: {fileID: 1274841161}
+  radiusMultiplier: 40
   spawnLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  maxTries: 40
+  maxTries: 4000
 --- !u!4 &2003236055
 Transform:
   m_ObjectHideFlags: 0
@@ -608,7 +608,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2058337553}
   - component: {fileID: 2058337552}
-  - component: {fileID: 2058337554}
   m_Layer: 0
   m_Name: Trees1
   m_TagString: Untagged
@@ -636,13 +635,13 @@ MonoBehaviour:
   - {fileID: 166966, guid: 78c29697749a6d44e964f9a0cf83d77a, type: 3}
   - {fileID: 198980, guid: 55ca4401075700d46a23ae8179a79579, type: 3}
   - {fileID: 104588, guid: 702740a5e4ac1ee40a1888d3b62faa91, type: 3}
-  numberOfTrees: 10000
+  numberOfTrees: 1000
   terrain: {fileID: 1274841161}
   radiusMultiplier: 2
   spawnLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  maxTries: 10
+  maxTries: 1000
 --- !u!4 &2058337553
 Transform:
   m_ObjectHideFlags: 0
@@ -658,28 +657,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2058337554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2058337551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 528b8c58a08b2e8168057d3b5157a184, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rockPrefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  numberOfRocks: 0
-  terrain: {fileID: 0}
-  radiusMultiplier: 1
-  spawnLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
-  maxTries: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
