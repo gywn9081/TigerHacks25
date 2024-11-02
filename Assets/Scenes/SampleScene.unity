@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 1274841161}
   - component: {fileID: 1274841160}
   - component: {fileID: 1274841163}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -535,6 +535,11 @@ MonoBehaviour:
   treePrefabs: []
   numberOfTrees: 100
   terrain: {fileID: 0}
+  radiusMultiplier: 0.5
+  spawnLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  maxTries: 0
 --- !u!1 &2058337551
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,8 +577,13 @@ MonoBehaviour:
   - {fileID: 166966, guid: 78c29697749a6d44e964f9a0cf83d77a, type: 3}
   - {fileID: 198980, guid: 55ca4401075700d46a23ae8179a79579, type: 3}
   - {fileID: 104588, guid: 702740a5e4ac1ee40a1888d3b62faa91, type: 3}
-  numberOfTrees: 1000
+  numberOfTrees: 10000
   terrain: {fileID: 1274841161}
+  radiusMultiplier: 2
+  spawnLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  maxTries: 0
 --- !u!4 &2058337553
 Transform:
   m_ObjectHideFlags: 0
