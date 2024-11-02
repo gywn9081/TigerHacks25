@@ -8,13 +8,12 @@ public class RockSpawner : MonoBehaviour
     public Terrain terrain;           // Reference to the terrain
     public float radiusMultiplier = 1.0f;  // Multiplier to adjust spawn radius based on tree size
     public LayerMask spawnLayerMask;  // Layer mask to ignore the terrain
-    public int maxTries;
+    public int maxTries = 400;
     void Start()
     {
         // Set spawnLayerMask to only include the "Trees" layer
         // spawnLayerMask = LayerMask.GetMask("Trees");
         Debug.Log("Spawn Layer Mask: " + spawnLayerMask.value);
-        maxTries = 1000;
         SpawnRocks();
 
     }
@@ -32,7 +31,7 @@ public class RockSpawner : MonoBehaviour
             }
             trynum++;
             // Randomly select a prefab from the array
-            GameObject rockPrefab = rockPrefabs[Random.Range(0, rockPrefabs.Length-2)];
+            GameObject rockPrefab = rockPrefabs[Random.Range(0, rockPrefabs.Length)];
             
             // Calculate spawn radius based on rock prefab size
             float spawnRadius = Mathf.Max(rockPrefab.transform.localScale.x, rockPrefab.transform.localScale.z) * radiusMultiplier;

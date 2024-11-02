@@ -32,7 +32,7 @@ public class TreeSpawner : MonoBehaviour
             }
             trynum++;
             // Randomly select a prefab from the array
-            GameObject treePrefab = treePrefabs[Random.Range(0, treePrefabs.Length-2)];
+            GameObject treePrefab = treePrefabs[Random.Range(0, treePrefabs.Length)];
             
             // Calculate spawn radius based on tree prefab size
             float spawnRadius = Mathf.Max(treePrefab.transform.localScale.x, treePrefab.transform.localScale.z) * radiusMultiplier;
