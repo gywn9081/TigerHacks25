@@ -18,6 +18,7 @@ public class RockSpawner : MonoBehaviour
         SpawnRocks();
 
     }
+
     void SpawnRocks()
     {
         int spawnedRocks = 0;
@@ -50,7 +51,7 @@ public class RockSpawner : MonoBehaviour
 
             if (splatmapData[0, 0, 0] > 0.9f) {
 
-                float y = terrain.SampleHeight(new Vector3(x, 0, z)) + terrain.GetPosition().y - Random.Range(0, 2);
+                float y = terrain.SampleHeight(new Vector3(x, 0, z)) + terrain.GetPosition().y - Random.Range(0, 2) - GetSlope(x,z);
                 Vector3 spawnPosition = new Vector3(x, y, z);
 
                 // Check for any existing objects within the dynamic spawn radius, excluding the terrain
@@ -71,4 +72,26 @@ public class RockSpawner : MonoBehaviour
 
         Debug.Log($"Total rocks spawned: {spawnedRocks}");
     }
+
+
+    public float GetSlope(float x, float z)
+    {
+        // Get the height at the given position
+        float height = terrain.SampleHeight(new Vector3(x, 0, z)) + terrain.GetPosition().y;
+
+        // Get heights at neighboring points
+        float heightNorth = terrain.SampleHeight(new Vector3(x, 0, z + 1)) + terrain.GetPosition().y; // North
+        float heightSouth = terrain.SampleHeight(new Vector3(x, 0, z - 1)) + terrain.GetPosition().y; // South
+        float heightEast = terrain.SampleHeight(new Vector3(x + 1, 0, z)) + terrain.GetPosition().y; // East
+        float heightWest = terrain.SampleHeight(new Vector3(x - 1, 0, z)) + terrain.GetPosition().y; // West
+
+        // Calculate the slope
+        float slopeX = (heightEast - heightWest) / 2; // Average slope in X direction
+        float slopeZ = (heightNorth - heightSouth) / 2; // Average slope in Z direction
+
+        // Calculate the overall slope (magnitude)
+        float slope = Mathf.Sqrt(slopeX * slopeX + slopeZ * slopeZ);
+        return slope; // Returns the magnitude of the slope
+    }
+
 }
