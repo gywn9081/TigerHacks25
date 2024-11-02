@@ -1,41 +1,41 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class TreeSpawner : MonoBehaviour
+public class RockSpawner : MonoBehaviour
 {
-    public GameObject[] treePrefabs;  // Array to hold your tree prefabs
-    public int numberOfTrees;         // Number of trees to spawn
+    public GameObject[] rockPrefabs;  // Array to hold your tree prefabs
+    public int numberOfRocks;         // Number of trees to spawn
     public Terrain terrain;           // Reference to the terrain
     public float radiusMultiplier = 1.0f;  // Multiplier to adjust spawn radius based on tree size
     public LayerMask spawnLayerMask;  // Layer mask to ignore the terrain
-    public int maxTries = 400;
+    public int maxTries;
     void Start()
     {
         // Set spawnLayerMask to only include the "Trees" layer
         // spawnLayerMask = LayerMask.GetMask("Trees");
         Debug.Log("Spawn Layer Mask: " + spawnLayerMask.value);
-        SpawnTrees();
+        maxTries = 1000;
+        SpawnRocks();
 
     }
-
-    void SpawnTrees()
+    void SpawnRocks()
     {
-        int spawnedTrees = 0;
+        int spawnedRocks = 0;
         int trynum = 0;
         Debug.Log("Spawn Layer Mask: " + spawnLayerMask.value);
 
 
-        for (int i = 0; i < numberOfTrees; i++)
+        for (int i = 0; i < numberOfRocks; i++)
         {
             if (trynum > maxTries) {
                 break;
             }
             trynum++;
             // Randomly select a prefab from the array
-            GameObject treePrefab = treePrefabs[Random.Range(0, treePrefabs.Length-2)];
+            GameObject rockPrefab = rockPrefabs[Random.Range(0, rockPrefabs.Length-2)];
             
-            // Calculate spawn radius based on tree prefab size
-            float spawnRadius = Mathf.Max(treePrefab.transform.localScale.x, treePrefab.transform.localScale.z) * radiusMultiplier;
+            // Calculate spawn radius based on rock prefab size
+            float spawnRadius = Mathf.Max(rockPrefab.transform.localScale.x, rockPrefab.transform.localScale.z) * radiusMultiplier;
 
             // Generate random position within the terrain bounds
             float x = Random.Range(0, terrain.terrainData.size.x);
@@ -62,14 +62,16 @@ public class TreeSpawner : MonoBehaviour
             }
 
 
-            // Instantiate the tree prefab
-            Instantiate(treePrefab, spawnPosition, Quaternion.identity);
-            spawnedTrees++;
+            // Instantiate the rock prefab
+            Instantiate(rockPrefab, spawnPosition, Quaternion.identity);
+            spawnedRocks++;
 
-            // Debug log to confirm tree spawn
-            // Debug.Log($"Spawned tree {spawnedTrees} at position: {spawnPosition}");
+            // Debug log to confirm rock spawn
+            // Debug.Log($"Spawned rocks {spawnedRocks} at position: {spawnPosition}");
         }
 
-        Debug.Log($"Total trees spawned: {spawnedTrees}");
+        Debug.Log($"Total rocks spawned: {spawnedRocks}");
     }
+
+
 }
