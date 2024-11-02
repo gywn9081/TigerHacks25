@@ -1,0 +1,202 @@
+# Blender MTL File: 'stodolaunity.blend'
+# Material Count: 19
+
+newmtl Aluminium
+Ns 225.000000
+Ka 0.554545 0.554545 0.554545
+Kd 0.037108 0.014025 0.002959
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+
+newmtl Asphalt_New
+Ns 37.654953
+Ka 1.000000 1.000000 1.000000
+Kd 0.262745 0.235294 0.243137
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\Mikołaj\\Desktop\\chalupki the game modele\\stodola\\stodola\\Asphalt New\\Asphalt_New.jpg
+
+newmtl Base_Metal.001
+Ns 495.184741
+Ka 0.978022 0.978022 0.978022
+Kd 0.723056 0.520514 0.339533
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+
+newmtl Black_Plastic.002
+Ns 350.797615
+Ka 1.000000 1.000000 1.000000
+Kd 0.007798 0.007798 0.007798
+Ks 0.887585 0.887585 0.887585
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Blacktop_Old_01
+Ns 396.371892
+Ka 1.000000 1.000000 1.000000
+Kd 0.517647 0.533333 0.545098
+Ks 0.057273 0.057273 0.057273
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\Mikołaj\\Desktop\\chalupki the game modele\\stodola\\stodola\\Blacktop_Old_01\\Blacktop_Old_01.jpg
+
+newmtl Blacktop_Old_02
+Ns 83.473112
+Ka 1.000000 1.000000 1.000000
+Kd 0.560784 0.568627 0.568627
+Ks 0.275455 0.275455 0.275455
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\Mikołaj\\Desktop\\chalupki the game modele\\stodola\\stodola\\Blacktop_Old_02\\Blacktop_Old_02.jpg
+
+newmtl Brick_Rough_Dark
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.368627 0.301961 0.207843
+Ks 0.117879 0.117879 0.117879
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\Mikołaj\\Desktop\\chalupki the game modele\\stodola\\stodola\\brick\\Brick_Rough_Dark.jpg
+map_Ns C:\\Users\\Mikołaj\\Desktop\\chalupki the game modele\\stodola\\stodola\\brick\\Brick_Rough_Dark_roughnes.jpg
+
+newmtl Bulb_Glass.001
+Ns 783.999994
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 0.735830 0.398236
+Ks 0.125000 0.125000 0.125000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 0.353846
+illum 9
+
+newmtl Hay
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.291667 0.291667 0.291667
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Metal.001
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.900000 0.900000 0.900000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Roofing_Shingles_Multi
+Ns 518.597116
+Ka 1.000000 1.000000 1.000000
+Kd 0.533333 0.498039 0.490196
+Ks 0.309091 0.309091 0.309091
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\Mikołaj\\Desktop\\chalupki the game modele\\stodola\\stodola\\roofing\\Roofing_Shingles_Multi (1).jpg
+map_Ns C:\\Users\\Mikołaj\\Desktop\\chalupki the game modele\\stodola\\stodola\\roofing\\Roofing_Shingles_Multi (1)_roughnes.jpg
+
+newmtl Wood_02
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.233333 0.233333 0.233333
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Wood_04
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl metal_pinezki
+Ns 900.000000
+Ka 0.763636 0.763636 0.763636
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+
+newmtl pin_board
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump C:\\Users\\Mikołaj\\Desktop\\chalupki the game modele\\stodola\\stodola\\pin board\\depositphotos_23637653-stock-photo-blank-cork-pin-board-texture_normal.jpg
+map_Kd C:\\Users\\Mikołaj\\Desktop\\chalupki the game modele\\stodola\\stodola\\pin board\\depositphotos_23637653-stock-photo-blank-cork-pin-board-texture.jpg
+
+newmtl pinezka_1
+Ns 113.132244
+Ka 1.000000 1.000000 1.000000
+Kd 0.207916 0.004762 0.000000
+Ks 0.477273 0.477273 0.477273
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl pinezka_2
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.003242 0.000000 0.083532
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl wiadro
+Ns 390.062498
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+
+newmtl woda
+Ns 900.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump -bm 1.300000 C:\\Users\\Mikołaj\\Desktop\\chalupki the game modele\\stodola\\stodola\\Asphalt New\\Asphalt_New_normal.jpg
