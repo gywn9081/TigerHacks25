@@ -48,7 +48,7 @@ public class RockSpawner : MonoBehaviour
                 continue;
             }
 
-            float y = terrain.SampleHeight(new Vector3(x, 0, z)) + terrain.GetPosition().y;
+            float y = terrain.SampleHeight(new Vector3(x, 0, z)) + terrain.GetPosition().y - Random.Range(0, 2);
             Vector3 spawnPosition = new Vector3(x, y, z);
 
             // Check for any existing objects within the dynamic spawn radius, excluding the terrain
