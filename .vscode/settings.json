@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "FOBAR.sln"
+    "dotnet.defaultSolution": "TigerHacks2025.sln"
 }
