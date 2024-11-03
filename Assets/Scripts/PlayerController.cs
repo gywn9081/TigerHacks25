@@ -37,8 +37,8 @@ void Start()
     animator = GetComponent<Animator>();
     animator.SetBool("isMoving", false);
     characterController = GetComponent<CharacterController>();
-    Cursor.lockState = CursorLockMode.Locked;
-    Cursor.visible = false;
+    // Cursor.lockState = CursorLockMode.Locked;
+    Cursor.visible = true;
 }
 
 void Update()

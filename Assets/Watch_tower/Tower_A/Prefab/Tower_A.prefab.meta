@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: b8983f0b776e1614ab531faf86c09bae
+timeCreated: 1579352709
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 161661
+  packageName: Watch Tower Set
+  packageVersion: 1.0
+  assetPath: Assets/Watch_tower/Tower_A/Prefab/Tower_A.prefab
+  uploadId: 348734

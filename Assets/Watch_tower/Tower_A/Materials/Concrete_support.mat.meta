@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 49cda30c92a3ebf4888b0ab7d48e15df
+timeCreated: 1579348144
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 161661
+  packageName: Watch Tower Set
+  packageVersion: 1.0
+  assetPath: Assets/Watch_tower/Tower_A/Materials/Concrete_support.mat
+  uploadId: 348734

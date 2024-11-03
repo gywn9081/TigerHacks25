@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: fac95349a68f0c2438d79d20ced79b03
+timeCreated: 1579352754
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 161661
+  packageName: Watch Tower Set
+  packageVersion: 1.0
+  assetPath: Assets/Watch_tower/Tower_B/Materials/Slate_Light_Tile.mat
+  uploadId: 348734

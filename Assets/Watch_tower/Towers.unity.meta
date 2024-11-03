@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ec49a8acb2d779e42b6cc0067b3908f0
+timeCreated: 1579353976
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 161661
+  packageName: Watch Tower Set
+  packageVersion: 1.0
+  assetPath: Assets/Watch_tower/Towers.unity
+  uploadId: 348734

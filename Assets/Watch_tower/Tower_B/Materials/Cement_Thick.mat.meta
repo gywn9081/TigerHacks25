@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 9d9315d24f8d6d14a87c39809e07b8eb
+timeCreated: 1579352754
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 161661
+  packageName: Watch Tower Set
+  packageVersion: 1.0
+  assetPath: Assets/Watch_tower/Tower_B/Materials/Cement_Thick.mat
+  uploadId: 348734

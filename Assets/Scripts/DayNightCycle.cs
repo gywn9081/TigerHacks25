@@ -177,7 +177,7 @@ void Update()
             float t = Mathf.Clamp01(elapsedTime / lerpDuration); // Calculate t between 0 and 1
 
             // Apply ease-out function to t (e.g., sqrt(t) for square root ease-out)
-            float easeOutT = Mathf.Pow(t, 1.1f); // Adjust for more/less easing as needed
+            float easeOutT = Mathf.Pow(t, 1f); // Adjust for more/less easing as needed
 
             // Interpolating both values with eased t
             currentDayLength = Mathf.Lerp(dayLengthMinutes, nightLengthMinutes, easeOutT);

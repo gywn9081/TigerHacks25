@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: e938dfd5c97a25146978e654ae8c3721
+timeCreated: 1579352754
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 161661
+  packageName: Watch Tower Set
+  packageVersion: 1.0
+  assetPath: Assets/Watch_tower/Tower_B/Materials/Tower.mat
+  uploadId: 348734
