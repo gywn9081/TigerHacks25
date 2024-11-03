@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 064a897812737fe4faadb1310f234625
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 225622
+  packageName: 'Wood Bucket : Standard + Dirty'
+  packageVersion: 1.0
+  assetPath: Assets/WoodBucket/Materials/WoodBucket_02_Dirty.mat
+  uploadId: 508294
