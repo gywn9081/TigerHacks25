@@ -13,7 +13,7 @@ public class NPCController : MonoBehaviour
     public float lookXLimit = 45f;
 
     Vector3 moveDirection = Vector3.zero;
-    float rotationX = 0;
+    //float rotationX = 0;
     public bool canMove = true;
 
     CharacterController characterController;
