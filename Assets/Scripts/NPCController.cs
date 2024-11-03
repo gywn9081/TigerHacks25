@@ -1,83 +1,66 @@
-using System.Collections;
-using System.Collections.Generic;
-using static System.Math;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 public class NPCController : MonoBehaviour
 {
-    public float walkSpeed = 0.5f;
+    public float walkSpeed = 0.75f;
     public float gravity = 10f;
+    public float rotationSpeed = 5f; // Speed of rotation
 
-    public float lookSpeed = 2f;
-    public float lookXLimit = 45f;
+    private Vector3 moveDirection = Vector3.zero;
+    private CharacterController characterController;
+    private float randCounter = 0f;
+    private float pauseCounter = 0f;
 
-    Vector3 moveDirection = Vector3.zero;
-    //float rotationX = 0;
-    public bool canMove = true;
-
-    CharacterController characterController;
-    public float randCounter = 0f;
-    public float pauseCounter = 0f;
-    public bool doneMoving = false;
-    
-void Start()
-{
-    characterController = GetComponent<CharacterController>();
-    Cursor.lockState = CursorLockMode.Locked;
-    Cursor.visible = false;
-}
-
-void Update()
-{
-    #region Handles falling
-    while(!characterController.isGrounded)
+    void Start()
     {
-        moveDirection.y -= gravity * Time.deltaTime;
+        characterController = GetComponent<CharacterController>();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    void Update()
+    {
+        // Handle gravity
+        if (!characterController.isGrounded)
+        {
+            moveDirection.y -= gravity * Time.deltaTime;
+        }
+        else
+        {
+            moveDirection.y = 0; // Reset vertical movement when grounded
+        }
+
+        // Handle pause
+        if (pauseCounter > 0f)
+        {
+            pauseCounter -= Time.deltaTime;
+            return;
+        }
+
+        // Handle random movement generation
+        if (randCounter <= 0f)
+        {
+            float randomX = Random.Range(-1f, 1f);
+            float randomZ = Random.Range(-1f, 1f);
+            moveDirection.x = randomX * walkSpeed;
+            moveDirection.z = randomZ * walkSpeed;
+
+            randCounter = Random.Range(1f, 5f); // New random time for next movement
+            pauseCounter = Random.Range(0f, 3f); // Pause time after movement
+        }
+
+        // Move the NPC
         characterController.Move(moveDirection * Time.deltaTime);
+
+        // Smoothly rotate towards movement direction
+        if (moveDirection != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
+
+        // Update the random counter
+        randCounter -= Time.deltaTime;
     }
-    #endregion
-
-    if(pauseCounter > 0f)
-    {
-
-        pauseCounter -= Time.deltaTime;
-        return;
-
-    }
-
-    if( (randCounter) <= 0f)
-    {
-
-            #region New random movement generation
-
-            float random = (Random.Range(0f, 1f)) - Random.Range(0f, 1f);
-            randCounter = Random.Range(0f,5f);
-            if(pauseCounter <= 0) pauseCounter = Random.Range(0f,3f);
-
-            #endregion
-
-            #region Handles Movement
-            Vector3 forward = transform.TransformDirection(Vector3.forward);
-            Vector3 right = transform.TransformDirection(Vector3.right);
-
-            float curSpeedX = canMove ? (walkSpeed * (random)) : 0;
-            float curSpeedY = canMove ? (walkSpeed * (random)) : 0;
-            float movementDirectionY = moveDirection.y;
-            moveDirection = (forward * curSpeedX) + (right * curSpeedY);
-            #endregion
-
-            if(canMove)
-            {
-                transform.rotation = Quaternion.LookRotation(moveDirection);    
-            }
-
-    }
-        #region Moves NPC
-        characterController.Move(moveDirection * (Time.deltaTime));
-        #endregion
-    
-    randCounter -= Time.deltaTime;
-    
-}
 }

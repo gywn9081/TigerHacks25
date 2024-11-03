@@ -3224,7 +3224,7 @@ MonoBehaviour:
   - {fileID: 1965851562501010, guid: e82139b3bae6212439ea1e85ad29678b, type: 3}
   - {fileID: 1206511787925574, guid: 3b1e3e9155d404942bc65d9aa80120ba, type: 3}
   - {fileID: 1055064919166404, guid: de6abd774f85e18408346a3233418242, type: 3}
-  numberOfAnimals: 5
+  numberOfAnimals: 50
   terrain: {fileID: 1274841161}
   spawnLayerMask:
     serializedVersion: 2
