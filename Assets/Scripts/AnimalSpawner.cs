@@ -11,6 +11,7 @@ public class AnimalSpawner : MonoBehaviour
     void Start()
     {
         SpawnAnimals();
+        UprisingMeter.Instance.GetMeterLevel();
     }
 
     void SpawnAnimals()
