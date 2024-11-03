@@ -4,7 +4,7 @@ using UnityEngine;
 public class NPCController : MonoBehaviour
 {
     public float walkSpeed = 0.75f;
-    public float gravity = 10f;
+    public float gravity = 32f;
     public float rotationSpeed = 5f; // Speed of rotation
 
     private Vector3 moveDirection = Vector3.zero;
@@ -53,10 +53,12 @@ public class NPCController : MonoBehaviour
         // Move the NPC
         characterController.Move(moveDirection * Time.deltaTime);
 
-        // Smoothly rotate towards movement direction
         if (moveDirection != Vector3.zero)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+            // Get the target rotation based only on the Y axis
+            Quaternion targetRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.z));
+    
+            // Apply rotation while keeping the X and Z axes fixed
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
 
