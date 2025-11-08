@@ -11,7 +11,7 @@ public class PlayerSpawner : MonoBehaviour
     // This is the event used by players to indicate that they have died and need the whole team to re-spawn
     public static event Action OnAnyPlayerDied;
 
-        public static void TriggerPlayerDeath()
+    public static void TriggerPlayerDeath()
     {
         Debug.Log("Player died invoking respawn");
         OnAnyPlayerDied?.Invoke();

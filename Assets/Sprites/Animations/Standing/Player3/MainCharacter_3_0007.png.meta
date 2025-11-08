@@ -1,24 +1,12 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 9e6309fd89fb25046b7d91d236fe1a03
-=======
-<<<<<<< HEAD
-guid: ddfd32da94ea58d49ac874d2a6b44438
-=======
-<<<<<<< HEAD
-guid: 9e6309fd89fb25046b7d91d236fe1a03
-=======
-guid: a2840b0fb3fa3f649b60d72cababa3d6
->>>>>>> ea169d846914ef113166f5ace87f2ebb454996a3
->>>>>>> de15ad75c94ada28c646ff903f2c5aee8d22b9e6
->>>>>>> 6cedea69179d103e254ae0e1d512eed15228120f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -49,13 +37,13 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -64,9 +52,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -105,13 +93,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> de15ad75c94ada28c646ff903f2c5aee8d22b9e6
->>>>>>> 6cedea69179d103e254ae0e1d512eed15228120f
   - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
@@ -125,14 +106,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> ea169d846914ef113166f5ace87f2ebb454996a3
->>>>>>> de15ad75c94ada28c646ff903f2c5aee8d22b9e6
->>>>>>> 6cedea69179d103e254ae0e1d512eed15228120f
   spriteSheet:
     serializedVersion: 2
     sprites: []
@@ -140,7 +113,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
