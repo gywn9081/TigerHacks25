@@ -20,6 +20,8 @@ public class PlayerSpawner : MonoBehaviour
 
     public void HandlePlayerDeath()
     {
+        
+        GravityManager.Instance.SetGravity(false);
         RespawnAllPlayers();
     }
 
