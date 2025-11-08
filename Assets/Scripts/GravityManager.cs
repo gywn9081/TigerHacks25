@@ -90,15 +90,15 @@ public class GravityManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Applies the current gravity to all PlayerController objects in the scene.
+    /// Applies the current gravity to all TigerHacksPlayerController objects in the scene.
     /// This is called automatically when gravity flips, but can be called manually.
     /// </summary>
     public void ApplyGravityToAllPlayers()
     {
-        PlayerController[] players = FindObjectsOfType<PlayerController>();
+        TigerHacksPlayerController[] players = FindObjectsOfType<TigerHacksPlayerController>();
         float currentGravity = GetCurrentGravityScale();
 
-        foreach (PlayerController player in players)
+        foreach (TigerHacksPlayerController player in players)
         {
             Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
             if (rb != null)
@@ -131,7 +131,7 @@ public class GravityManager : MonoBehaviour
     /// <summary>
     /// Call this when a new player spawns to sync them with current gravity state.
     /// </summary>
-    public void RegisterPlayer(PlayerController player)
+    public void RegisterPlayer(TigerHacksPlayerController player)
     {
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
         if (rb != null)

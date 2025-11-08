@@ -56,7 +56,7 @@ public class GravityButton : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Check if a player touched the button
-        if (other.GetComponent<PlayerController>() != null)
+        if (other.GetComponent<TigerHacksPlayerController>() != null)
         {
             PressButton();
         }
