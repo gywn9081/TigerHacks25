@@ -96,8 +96,14 @@ public class PlayerController : MonoBehaviour
     }
     
     void Jump()
-    {
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+    {           // Check if gravity is inverted and adjust jump direction
+ float jumpDirection = 1f;
+      if (GravityManager.Instance != null && GravityManager.Instance.isGravityInverted)
+   {
+             jumpDirection = -1f; // Jump downward when gravity is inverted
+                }
+      
+             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce * jumpDirection);
     }
     
     // Visualize ground check in editor
