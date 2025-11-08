@@ -23,8 +23,6 @@ public class PlayerInputManager : MonoBehaviour
     };
     
     [Header("Input Settings")]
-    [SerializeField] private bool allowKeyboardSplit = false; // Allow multiple keyboard players
-    
     private PlayerInputManager playerInputManager;
     private List<GameObject> activePlayers = new List<GameObject>();
     
