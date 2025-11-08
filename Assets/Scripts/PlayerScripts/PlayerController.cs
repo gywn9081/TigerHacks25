@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using System;
 public class PlayerController : MonoBehaviour
 {
     [Header("Player Settings")]
@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.2f;
     [SerializeField] private LayerMask groundLayer;
-    
+
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
@@ -132,9 +132,26 @@ public class PlayerController : MonoBehaviour
     {
         return playerNumber;
     }
-    
+
     public PlayerInput GetPlayerInput()
     {
         return playerInput;
     }
+    
+    /*
+        Trigger death stuff
+    */
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // Check if the collided object is on the Deadly layer
+        if (other.gameObject.layer == LayerMask.NameToLayer("Deadly"))
+        {
+            OnDeath();
+        }
+    }
+    public void OnDeath()
+    {
+        PlayerSpawner.TriggerPlayerDeath();
+    }
+
 }
