@@ -480,7 +480,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_JoinAction:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Join
       m_Type: 0
@@ -490,7 +490,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: -1009752341558905583, guid: b3d99e87966f34a15bdf99368de09a41, type: 3}
   m_PlayerPrefab: {fileID: 0}
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0
@@ -514,7 +514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSpawner_1
   playerPrefab: {fileID: 1479121755662474910, guid: a89ef660cdfc2329aa7f02181df3b6d4, type: 3}
-  maxPlayers: 4
+  maxPlayers: 2
   spawnPoints:
   - {fileID: 530928715}
   - {fileID: 1608128112}
@@ -523,7 +523,11 @@ MonoBehaviour:
   - {r: 0, g: 0, b: 1, a: 1}
   - {r: 0, g: 1, b: 0, a: 1}
   - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  maxKeyboardPlayers: 4
+  allowKeyboardSplit: 1
+  maxKeyboardPlayers: 3
+  useManualJoining: 0
+  player1JoinKey: 13
+  player2JoinKey: 271
 --- !u!1 &1179651655
 GameObject:
   m_ObjectHideFlags: 0
