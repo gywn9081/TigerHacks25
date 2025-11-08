@@ -10,33 +10,54 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 10f;
+    [SerializeField] public float acceleration = 50f;
+
+    [SerializeField] public float normalAcceleration = 50f;
     
-    [Header("Ground Check")]
+    [Header("Jump Check")]
+    [SerializeField] private Transform jumpCheck;
+    [SerializeField] private float jumpCheckRadius = 0.2f;
+    [SerializeField] private LayerMask jumpableLayers;
+    private bool isJumpable;
+
+    [Header("Material Conditions")]
+    [SerializeField] private Transform iceCheck;
+    [SerializeField] private float iceCheckRadius = 0.2f;
+    [SerializeField] private float iceScaling = 0.1f;
+    [SerializeField] private LayerMask iceLayers;
+    private bool isIcy;
+
+    [Header("Default Material")]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.2f;
-    [SerializeField] private LayerMask jumpableLayers;
+    [SerializeField] private LayerMask groundLayers;
+    private bool isGrounded;
+
 
     private Collider2D playerCollider;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
-    private bool isGrounded;
+
     private Vector2 moveInput;
     private PlayerInput playerInput;
-    
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();
-        
+
         // Wire up the events manually if needed
         if (playerInput != null)
         {
             // The events will be connected through the Inspector when using "Invoke Unity Events"
             Debug.Log($"PlayerInput initialized for {gameObject.name}");
         }
+
+        // Set acceleration
+        acceleration = normalAcceleration;
     }
     
     void Start()
@@ -58,29 +79,85 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Check if jumpable
+        CheckJumpable();
+        // Check if grounded
         CheckGrounded();
-        // Apply horizontal movement
-        rb.linearVelocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y);
+        // Check if icy
+        CheckIcy();
+
+        Debug.Log(isGrounded);
+        Debug.Log(isIcy);
+        // Make sure material changes are smooth
+        SpeedSmoothing();
+
+        // Calculate target velocity
+        float targetVelocityX = moveInput.x * moveSpeed;
+        
+        // Smoothly move towards target velocity instead of setting it directly
+        float newVelocityX = Mathf.MoveTowards(
+            rb.linearVelocity.x, 
+            targetVelocityX, 
+            acceleration * Time.fixedDeltaTime
+        );
+        
+        rb.linearVelocity = new Vector2(newVelocityX, rb.linearVelocity.y);
     }
-    
-    // In your grounded check
-    void CheckGrounded()
+
+    // Jumpable check
+    void CheckJumpable()
     {
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(groundCheck.position, groundCheckRadius, jumpableLayers);
-        
-        isGrounded = false;
-        
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(jumpCheck.position, jumpCheckRadius, jumpableLayers);
+
+        isJumpable = false;
+
         foreach (Collider2D collider in hitColliders)
         {
-            // If we find any collider that isn't our own, we're grounded
+            // If we find any collider that isn't our own, we're on a jumpable surface
             if (collider != playerCollider)
             {
-                isGrounded = true;
-                break; // Found valid ground, no need to keep checking
+                isJumpable = true;
+                break; // Found valid surface, no need to keep checking
             }
         }
     }
-    
+    // Icy check
+    void CheckIcy()
+    {
+        isIcy = Physics2D.OverlapCircle(iceCheck.position, iceCheckRadius, iceLayers);
+    }
+
+    // Check for materials that don't have special properties
+    void CheckGrounded()
+    {
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(groundCheck.position, groundCheckRadius, groundLayers);
+
+        isGrounded = false;
+
+        foreach (Collider2D collider in hitColliders)
+        {
+            // If we find any collider that isn't our own, we're on a jumpable surface
+            if (collider != playerCollider)
+            {
+                isGrounded = true;
+                break; // Found valid surface, no need to keep checking
+            }
+        }
+    }
+
+    // Smooth acceleration changing so when jumping don't accelerate fast
+    void SpeedSmoothing()
+    {
+        if (isIcy)
+        {
+            acceleration = normalAcceleration * iceScaling;
+        }
+        else if (isJumpable)
+        {
+            acceleration = normalAcceleration;
+        }
+    }
+
     // Input System callback for movement (called by Send Messages)
     // Note: Method name must match the action name in InputActions (case-sensitive!)
     public void OnMove(InputValue value)
@@ -91,7 +168,7 @@ public class PlayerController : MonoBehaviour
     // Input System callback for jump (called by Send Messages)
     public void OnJump(InputValue value)
     {
-        if (value.isPressed && isGrounded)
+        if (value.isPressed && isJumpable)
         {
             Jump();
         }
