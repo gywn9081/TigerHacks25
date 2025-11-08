@@ -494,8 +494,6 @@ MonoBehaviour:
   allowKeyboardSplit: 1
   maxKeyboardPlayers: 4
   useManualJoining: 0
-  player1JoinKey: 32
-  player2JoinKey: 273
 --- !u!95 &837153256
 Animator:
   serializedVersion: 7
@@ -1623,6 +1621,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90468f40928e05841b4edda79e162fd8, type: 3}
+--- !u!1001 &5014824608631016538
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2890516395830738973, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890516395830738973, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890516395830738973, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890516395830738973, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890516395830738973, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890516395830738973, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890516395830738973, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890516395830738973, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890516395830738973, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890516395830738973, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547249277177575385, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
+      propertyPath: m_Name
+      value: KeyCard
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
 --- !u!1001 &5907647588649756785
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1698,3 +1753,4 @@ SceneRoots:
   - {fileID: 1942628893}
   - {fileID: 1420800848}
   - {fileID: 991505858}
+  - {fileID: 5014824608631016538}
