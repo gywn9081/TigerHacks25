@@ -14,8 +14,9 @@ public class PlayerController : MonoBehaviour
     [Header("Ground Check")]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.2f;
-    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask jumpableLayers;
 
+    private Collider2D playerCollider;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
@@ -42,6 +43,8 @@ public class PlayerController : MonoBehaviour
     {
         // Set player color
         spriteRenderer.color = playerColor;
+        // Set ref to child collider
+        playerCollider = GetComponent<Collider2D>();
     }
     
     void Update()
@@ -59,14 +62,30 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("IsGrounded", isGrounded);
         }
     }
-    
+
     void FixedUpdate()
     {
-        // Check if grounded
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        
+        CheckGrounded();
         // Apply horizontal movement
         rb.linearVelocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y);
+    }
+    
+    // In your grounded check
+    void CheckGrounded()
+    {
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(groundCheck.position, groundCheckRadius, jumpableLayers);
+        
+        isGrounded = false;
+        
+        foreach (Collider2D collider in hitColliders)
+        {
+            // If we find any collider that isn't our own, we're grounded
+            if (collider != playerCollider)
+            {
+                isGrounded = true;
+                break; // Found valid ground, no need to keep checking
+            }
+        }
     }
     
     // Input System callback for movement (called by Send Messages)
@@ -97,13 +116,12 @@ public class PlayerController : MonoBehaviour
     
     void Jump()
     {           // Check if gravity is inverted and adjust jump direction
- float jumpDirection = 1f;
-      if (GravityManager.Instance != null && GravityManager.Instance.isGravityInverted)
-   {
-             jumpDirection = -1f; // Jump downward when gravity is inverted
-                }
-      
-             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce * jumpDirection);
+        float jumpDirection = 1f;
+        if (GravityManager.Instance != null && GravityManager.Instance.isGravityInverted)
+        {
+            jumpDirection = -1f; // Jump downward when gravity is inverted
+        }
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce * jumpDirection);
     }
     
     // Visualize ground check in editor
