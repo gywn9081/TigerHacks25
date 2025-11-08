@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 using System.Collections.Generic;
 // using System.Diagnostics;
 
-public class PlayerSpawner_1 : MonoBehaviour
+public class PlayerSpawner : MonoBehaviour
 {
     [Header("Player Setup")]
     [SerializeField] private GameObject playerPrefab;

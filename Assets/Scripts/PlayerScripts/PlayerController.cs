@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController_1 : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Player Settings")]
     [SerializeField] private int playerNumber = 1;
