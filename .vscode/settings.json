@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "TigerHacks25.slnx"
+    "dotnet.defaultSolution": "TigerHacks25_1.slnx"
 }
