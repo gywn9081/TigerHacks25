@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 10f;
-    [SerializeField] public float acceleration = 50f;
+    [SerializeField] public float acceleration = 40f;
 
     [SerializeField] public float normalAcceleration = 50f;
     
@@ -32,8 +32,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundCheckRadius = 0.2f;
     [SerializeField] private LayerMask groundLayers;
     private bool isGrounded;
-
-
     private Collider2D playerCollider;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -41,6 +39,10 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 moveInput;
     private PlayerInput playerInput;
+
+    [Header("Items")]
+    [SerializeField] private bool jumpBoots;
+    private bool jumpBootsCooldown;
 
     void Awake()
     {
@@ -85,9 +87,6 @@ public class PlayerController : MonoBehaviour
         CheckGrounded();
         // Check if icy
         CheckIcy();
-
-        Debug.Log(isGrounded);
-        Debug.Log(isIcy);
         // Make sure material changes are smooth
         SpeedSmoothing();
 
@@ -117,6 +116,8 @@ public class PlayerController : MonoBehaviour
             if (collider != playerCollider)
             {
                 isJumpable = true;
+                // We set this to false just to indicate we have stepped on a jumpable surface
+                jumpBootsCooldown = false;
                 break; // Found valid surface, no need to keep checking
             }
         }
@@ -168,9 +169,16 @@ public class PlayerController : MonoBehaviour
     // Input System callback for jump (called by Send Messages)
     public void OnJump(InputValue value)
     {
-        if (value.isPressed && isJumpable)
+        if (!value.isPressed) return;
+        if (isJumpable)
         {
             Jump();
+        }
+        // Allow for double jump boots to be used
+        else if (jumpBoots && !jumpBootsCooldown)
+        {
+            Jump();
+            jumpBootsCooldown = true;
         }
     }
     
