@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7bdaed8803624a54ba2e7c1b821e9947
+guid: 9d78d7fc528e04f40ac48e0d2a3c692e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7052060379087378570
-    second: Door_0008_0
+      213: 7756461400180847717
+    second: World2_Background_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Door_0008_0
+      name: World2_Background_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 64
-        height: 128
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 677e3e9d27c022e90800000000000000
-      internalID: -7052060379087378570
+      spriteID: 564fec74c8c74ab60800000000000000
+      internalID: 7756461400180847717
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Door_0008_0: -7052060379087378570
+      World2_Background_0: 7756461400180847717
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
