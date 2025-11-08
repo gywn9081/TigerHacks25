@@ -54,13 +54,6 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.flipX = true;
         else if (moveInput.x > 0)
             spriteRenderer.flipX = false;
-        
-        // Update animator parameters if animator exists
-        if (animator != null)
-        {
-            animator.SetFloat("Speed", Mathf.Abs(moveInput.x));
-            animator.SetBool("IsGrounded", isGrounded);
-        }
     }
 
     void FixedUpdate()
