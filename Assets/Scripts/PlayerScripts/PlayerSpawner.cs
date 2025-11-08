@@ -34,8 +34,9 @@ public class PlayerSpawner : MonoBehaviour
         
         // Configure the PlayerInputManager
         inputManager.playerPrefab = playerPrefab;
-        inputManager.maxPlayerCount = maxPlayers;
         inputManager.joinBehavior = PlayerJoinBehavior.JoinPlayersWhenButtonIsPressed;
+        
+        // Note: maxPlayerCount must be set in the Inspector on the PlayerInputManager component
         
         // Subscribe to join/leave events
         inputManager.onPlayerJoined += OnPlayerJoined;

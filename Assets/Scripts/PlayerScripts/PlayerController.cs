@@ -62,25 +62,26 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y);
     }
     
-    // Input System callback for movement
-    public void OnMove(InputAction.CallbackContext context)
+    // Input System callback for movement (called by Send Messages)
+    // Note: Method name must match the action name in InputActions (case-sensitive!)
+    public void OnMove(InputValue value)
     {
-        moveInput = context.ReadValue<Vector2>();
+        moveInput = value.Get<Vector2>();
     }
     
-    // Input System callback for jump
-    public void OnJump(InputAction.CallbackContext context)
+    // Input System callback for jump (called by Send Messages)
+    public void OnJump(InputValue value)
     {
-        if (context.performed && isGrounded)
+        if (value.isPressed && isGrounded)
         {
             Jump();
         }
     }
     
     // Input System callback for action button
-    public void OnAction(InputAction.CallbackContext context)
+    public void OnAction(InputValue value)
     {
-        if (context.performed)
+        if (value.isPressed)
         {
             // Add your action logic here
             Debug.Log($"Player {playerNumber} performed action!");

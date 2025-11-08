@@ -50,15 +50,6 @@ public class PlayerInputManager : MonoBehaviour
         }
     }
     
-    void Start()
-    {
-        // Enable joining for all players
-        if (playerInputManager != null)
-        {
-            playerInputManager.EnableJoining();
-        }
-    }
-    
     // Called automatically by PlayerInputManager when a player joins
     public void OnPlayerJoined(PlayerInput playerInput)
     {
