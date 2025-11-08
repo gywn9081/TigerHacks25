@@ -53,8 +53,6 @@ public class PlayerSpawner : MonoBehaviour
 
     [Header("Manual Join Settings")]
     [SerializeField] private bool useManualJoining = false;
-    [SerializeField] private KeyCode player1JoinKey = KeyCode.Return;
-    [SerializeField] private KeyCode player2JoinKey = KeyCode.KeypadEnter;
 
     private UnityEngine.InputSystem.PlayerInputManager inputManager;
     private List<GameObject> activePlayers = new List<GameObject>();
@@ -112,8 +110,8 @@ public class PlayerSpawner : MonoBehaviour
             }
         }
         // Log number of players connected
-        Debug.Log(GetPlayerCount());
-        Debug.Log("test");
+        // Debug.Log(GetPlayerCount());
+        // Debug.Log("test");
     }
 
     bool HasPlayerWithScheme(string schemeName)
