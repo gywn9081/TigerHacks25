@@ -24,6 +24,9 @@ public class LevelDoor : MonoBehaviour
     [SerializeField] private AudioClip doorEnterSound;
     [SerializeField] private AudioClip doorExitSound;
 
+    [Header("Animation (Optional)")]
+    [SerializeField] private DoorAnimationController doorAnimationController;
+
     [Header("Transition Settings")]
     [SerializeField] private float transitionDelay = 1.0f;
 
@@ -135,6 +138,8 @@ public class LevelDoor : MonoBehaviour
 
     void UnlockDoor()
     {
+        Debug.Log($"[LevelDoor] UnlockDoor() called on {gameObject.name}");
+
         if (isUnlocked)
         {
             Debug.Log("[LevelDoor] UnlockDoor called but already unlocked");
@@ -145,6 +150,17 @@ public class LevelDoor : MonoBehaviour
         UpdateVisuals();
 
         Debug.Log("[LevelDoor] *** DOOR IS NOW UNLOCKED ***");
+
+        // Trigger door opening animation
+        if (doorAnimationController != null)
+        {
+            Debug.Log("[LevelDoor] DoorAnimationController exists, calling OpenDoor()");
+            doorAnimationController.OpenDoor();
+        }
+        else
+        {
+            Debug.LogError($"[LevelDoor] DoorAnimationController is NULL on {gameObject.name}! Cannot animate door.");
+        }
 
         // Play unlock effects
         if (unlockParticles != null)
@@ -365,7 +381,14 @@ public class LevelDoor : MonoBehaviour
     {
         isTransitioning = true;
 
-        // Wait for transition delay
+        // Close the door animation before transitioning
+        if (doorAnimationController != null)
+        {
+            Debug.Log("[LevelDoor] Closing door before scene transition");
+            doorAnimationController.CloseDoor();
+        }
+
+        // Wait for transition delay (gives time for door close animation)
         yield return new WaitForSeconds(transitionDelay);
 
         // Load next scene
@@ -438,6 +461,13 @@ public class LevelDoor : MonoBehaviour
         {
             isUnlocked = false;
             UpdateVisuals();
+
+            // Close the door animation
+            if (doorAnimationController != null)
+            {
+                doorAnimationController.CloseDoor();
+            }
+
             Debug.Log("[LevelDoor] Door locked and reset");
         }
 
