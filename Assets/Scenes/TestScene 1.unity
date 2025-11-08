@@ -1293,9 +1293,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 277b1215000e6d245a6621ea0b6332f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelDoor
-  nextSceneName: TestScene
-  nextSceneBuildIndex: -1
-  requiresCheckpoint: 0
+  nextSceneName: 
+  nextSceneBuildIndex: 2
+  requiresCheckpoint: 1
   requiresAllPlayers: 0
   lockedColor: {r: 1, g: 0, b: 0, a: 1}
   unlockedColor: {r: 0, g: 1, b: 0, a: 1}
