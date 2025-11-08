@@ -20,6 +20,15 @@ public class MenuButton : MonoBehaviour
             Debug.LogWarning($"[MenuButton] No scene name assigned on {gameObject.name}");
     }
 
+    public void QuitGame()
+    {
+    #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+    #else
+        Application.Quit();
+    #endif
+    }
+
 #if UNITY_EDITOR
     private void OnValidate()
     {

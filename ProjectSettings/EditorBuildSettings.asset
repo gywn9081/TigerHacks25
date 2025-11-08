@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelSelect/WorldSelect.unity
     guid: f2e1f3433630a1443a24c10d035f00e7
+  - enabled: 1
+    path: Assets/Scenes/LevelSelect/World1Levels.unity
+    guid: c701c363014fbe04ea4b78a2ce26130b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
