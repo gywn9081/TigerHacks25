@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8236574073315933300}
   - component: {fileID: 2504897298988546265}
   - component: {fileID: 7656709128184548034}
-  - component: {fileID: 3341762267374058742}
+  - component: {fileID: -30039920801873013}
   m_Layer: 0
   m_Name: Player Prefab
   m_TagString: Untagged
@@ -166,7 +166,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.29, y: 0.29}
   m_EdgeRadius: 0
 --- !u!114 &7656709128184548034
 MonoBehaviour:
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &3341762267374058742
+--- !u!114 &-30039920801873013
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -219,9 +219,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1479121755662474910}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21412fd977d340c8bab9ee66fff3d879, type: 3}
+  m_Script: {fileID: 11500000, guid: 62ce7e1491ff98c0aa82b2b82603de1d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController_1
   playerNumber: 1
   playerColor: {r: 1, g: 1, b: 1, a: 1}
   moveSpeed: 5
@@ -256,7 +256,7 @@ Transform:
   m_GameObject: {fileID: 6690626423935600715}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

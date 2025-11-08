@@ -29,6 +29,13 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();
+        
+        // Wire up the events manually if needed
+        if (playerInput != null)
+        {
+            // The events will be connected through the Inspector when using "Invoke Unity Events"
+            Debug.Log($"PlayerInput initialized for {gameObject.name}");
+        }
     }
     
     void Start()
@@ -78,7 +85,7 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    // Input System callback for action button
+    // Input System callback for action button (called by Send Messages)
     public void OnAction(InputValue value)
     {
         if (value.isPressed)
