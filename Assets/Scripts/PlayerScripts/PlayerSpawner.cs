@@ -1,9 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System.Collections.Generic;
+using System.Collections;
 using System;
-// using System.Diagnostics;
-// using System.Diagnostics;
+using System.Collections.Generic;
 
 
 
@@ -69,27 +68,8 @@ public class PlayerSpawner : MonoBehaviour
 
         // Configure the PlayerInputManager
         inputManager.playerPrefab = playerPrefab;
-        inputManager.joinBehavior = useManualJoining
-            ? PlayerJoinBehavior.JoinPlayersManually
-            : PlayerJoinBehavior.JoinPlayersWhenButtonIsPressed;
-
-        // Note: maxPlayerCount must be set in the Inspector on the PlayerInputManager component
-
-        // Subscribe to join/leave events
-        inputManager.onPlayerJoined += OnPlayerJoined;
-        inputManager.onPlayerLeft += OnPlayerLeft;
-    }
-
-    void OnDestroy()
-    {
-        // Unsubscribe from events
-        if (inputManager != null)
-        {
-            inputManager.onPlayerJoined -= OnPlayerJoined;
-            inputManager.onPlayerLeft -= OnPlayerLeft;
-        }
-        // Subscribe to the player death notice
-        OnAnyPlayerDied -= HandlePlayerDeath;
+        inputManager.joinBehavior = PlayerJoinBehavior.JoinPlayersManually;
+        OnAnyPlayerDied += HandlePlayerDeath;
     }
 
     void Start()
@@ -100,22 +80,108 @@ public class PlayerSpawner : MonoBehaviour
             Debug.Log("Key board split enabled letting in players");
             StartCoroutine(SpawnKeyboardPlayers());
         }
-
-        if (useManualJoining)
-        {
-            Debug.Log("Manual joining enabled. Press assigned keys to join players.");
-        }
-        else if (allowKeyboardSplit)
-        {
-            Debug.Log("Keyboard split enabled. Keyboard players will spawn automatically. Gamepad players can join by pressing any button.");
-        }
-        else
-        {
-            Debug.Log("PlayerSpawner ready. Players can join by pressing any button on their device.");
-        }
-        // Subscribe to the player death notice
-        OnAnyPlayerDied += HandlePlayerDeath;
     }
+
+
+    void Update()
+    {
+        // Check for players trying to join
+        if (activePlayers.Count < maxPlayers)
+        {
+            // Player 1 - Spacebar
+            if (Keyboard.current.spaceKey.wasPressedThisFrame && !HasPlayerWithScheme("Keyboard1"))
+            {
+                StartCoroutine(SpawnPlayerWithScheme("Keyboard1", 0));
+            }
+            // Player 2 - Enter
+            else if (Keyboard.current.enterKey.wasPressedThisFrame && !HasPlayerWithScheme("Keyboard2"))
+            {
+                StartCoroutine(SpawnPlayerWithScheme("Keyboard2", 1));
+            }
+            // Player 3 - Numpad Enter
+            else if (Keyboard.current.numpadEnterKey.wasPressedThisFrame && !HasPlayerWithScheme("Numpad"))
+            {
+                StartCoroutine(SpawnPlayerWithScheme("Numpad", 2));
+            }
+            // Player 4 - Gamepad Start
+            else if (Gamepad.current != null && Gamepad.current.startButton.wasPressedThisFrame && !HasPlayerWithScheme("Gamepad"))
+            {
+                StartCoroutine(SpawnPlayerWithScheme("Gamepad", 3));
+            }
+        }
+        // Log number of players connected
+        Debug.Log(GetPlayerCount());
+        Debug.Log("test");
+    }
+
+    bool HasPlayerWithScheme(string schemeName)
+    {
+        foreach (var player in activePlayers)
+        {
+            if (player == null) continue;
+            var input = player.GetComponent<PlayerInput>();
+            if (input != null && input.currentControlScheme == schemeName)
+                return true;
+        }
+        return false;
+    }
+
+    IEnumerator SpawnPlayerWithScheme(string schemeName, int playerIndex)
+    {
+        if (playerPrefab == null) yield break;
+
+        Vector3 spawnPosition = (playerIndex < spawnPoints.Count && spawnPoints[playerIndex] != null)
+            ? spawnPoints[playerIndex].position
+            : new Vector3(playerIndex * 3f, 0f, 0f);
+
+        GameObject player = Instantiate(playerPrefab, spawnPosition, Quaternion.identity);
+
+        yield return null; // Wait for initialization
+
+        if (player == null)
+        {
+            Debug.LogError($"Player {playerIndex + 1} was destroyed during spawn!");
+            yield break;
+        }
+
+        PlayerInput playerInput = player.GetComponent<PlayerInput>();
+        if (playerInput != null && playerInput.user.valid)
+        {
+            // Switch to the appropriate control scheme
+            InputDevice device = (schemeName == "Gamepad") ? (InputDevice)Gamepad.current : Keyboard.current;
+            playerInput.SwitchCurrentControlScheme(schemeName, device);
+            playerInput.neverAutoSwitchControlSchemes = true;
+        }
+
+        string controlName = GetControlDisplayName(schemeName);
+        player.name = $"Player {activePlayers.Count + 1} ({controlName})";
+
+        PlayerController controller = player.GetComponent<PlayerController>();
+        if (controller != null)
+        {
+            controller.SetPlayerNumber(activePlayers.Count + 1);
+            if (activePlayers.Count < playerColors.Count)
+            {
+                controller.SetPlayerColor(playerColors[activePlayers.Count]);
+            }
+        }
+
+        activePlayers.Add(player);
+        Debug.Log($"Player {activePlayers.Count} joined with {schemeName}");
+    }
+
+    string GetControlDisplayName(string controlScheme)
+    {
+        switch (controlScheme)
+        {
+            case "Keyboard1": return "WASD";
+            case "Keyboard2": return "Arrow Keys";
+            case "Numpad": return "Numpad";
+            case "Gamepad": return "Controller";
+            default: return controlScheme;
+        }
+    }
+
 
     System.Collections.IEnumerator SpawnKeyboardPlayers()
     {
@@ -189,33 +255,6 @@ public class PlayerSpawner : MonoBehaviour
         Debug.Log($"Keyboard Player {index + 1} spawned with {controlName}");
     }
 
-    void Update()
-    {
-        if (useManualJoining)
-        {
-            HandleManualJoining();
-        }
-    }
-
-    void HandleManualJoining()
-    {
-        if (activePlayers.Count >= maxPlayers)
-            return;
-
-        // Check for player join keys
-        if (Input.GetKeyDown(player1JoinKey) && !IsKeyboardPlayerActive("Keyboard1"))
-        {
-            JoinPlayerWithScheme(0); // Keyboard1 scheme index
-        }
-
-        if (Input.GetKeyDown(player2JoinKey) && !IsKeyboardPlayerActive("Keyboard2"))
-        {
-            JoinPlayerWithScheme(1); // Keyboard2 scheme index
-        }
-
-        // Gamepads join by pressing any button (automatic)
-    }
-
     bool IsKeyboardPlayerActive(string schemeName)
     {
         foreach (GameObject player in activePlayers)
@@ -236,84 +275,6 @@ public class PlayerSpawner : MonoBehaviour
         }
     }
 
-    // Called automatically by PlayerInputManager when a player joins
-    void OnPlayerJoined(PlayerInput playerInput)
-    {
-        int playerIndex = activePlayers.Count;
-
-        if (playerIndex >= maxPlayers)
-        {
-            Debug.LogWarning("Maximum number of players reached!");
-            Destroy(playerInput.gameObject);
-            return;
-        }
-
-        // Set spawn position
-        Vector3 spawnPosition;
-        if (playerIndex < spawnPoints.Count && spawnPoints[playerIndex] != null)
-        {
-            spawnPosition = spawnPoints[playerIndex].position;
-        }
-        else
-        {
-            // Default spacing if no spawn point is set
-            spawnPosition = new Vector3(playerIndex * 3f, 0f, 0f);
-        }
-
-        playerInput.transform.position = spawnPosition;
-        playerInput.gameObject.name = $"Player {playerIndex + 1}";
-
-        // Configure player
-        PlayerController controller = playerInput.GetComponent<PlayerController>();
-        if (controller != null)
-        {
-            controller.SetPlayerNumber(playerIndex + 1);
-
-            // Set player color
-            if (playerIndex < playerColors.Count)
-            {
-                controller.SetPlayerColor(playerColors[playerIndex]);
-            }
-        }
-        else
-        {
-            Debug.LogWarning($"PlayerController not found on {playerInput.gameObject.name}");
-        }
-
-        activePlayers.Add(playerInput.gameObject);
-
-        Debug.Log($"Player {playerIndex + 1} joined using {playerInput.currentControlScheme} (Total players: {activePlayers.Count})");
-    }
-
-    // Called automatically when a player leaves
-    void OnPlayerLeft(PlayerInput playerInput)
-    {
-        if (activePlayers.Contains(playerInput.gameObject))
-        {
-            activePlayers.Remove(playerInput.gameObject);
-            Debug.Log($"Player left. Active players: {activePlayers.Count}");
-        }
-    }
-
-    // Manual player spawning (if you want to spawn players programmatically)
-    public GameObject SpawnPlayer(int controlSchemeIndex = -1)
-    {
-        if (activePlayers.Count >= maxPlayers)
-        {
-            Debug.LogWarning("Cannot spawn player: Maximum player count reached!");
-            return null;
-        }
-
-        if (inputManager != null)
-        {
-            // Use PlayerInputManager to spawn
-            PlayerInput newPlayer = inputManager.JoinPlayer(controlSchemeIndex);
-            return newPlayer != null ? newPlayer.gameObject : null;
-        }
-
-        return null;
-    }
-
     // Respawn a player at their spawn point
     public void RespawnPlayer(int playerIndex)
     {
@@ -326,6 +287,8 @@ public class PlayerSpawner : MonoBehaviour
                 Vector3 spawnPosition = (playerIndex < spawnPoints.Count && spawnPoints[playerIndex] != null)
                     ? spawnPoints[playerIndex].position
                     : new Vector3(playerIndex * 3f, 0f, 0f);
+
+                Debug.Log(spawnPoints);
 
                 player.transform.position = spawnPosition;
 

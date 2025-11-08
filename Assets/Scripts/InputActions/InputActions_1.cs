@@ -105,7 +105,7 @@ public partial class @InputActions_1: IInputActionCollection2, IDisposable
                     ""name"": ""Jump"",
                     ""type"": ""Button"",
                     ""id"": ""b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
