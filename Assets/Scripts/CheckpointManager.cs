@@ -26,12 +26,21 @@ public class CheckpointManager : MonoBehaviour
         // DontDestroyOnLoad(gameObject);
     }
 
+    void Start()
+    {
+        // Subscribe to player death events
+        PlayerSpawner.OnAnyPlayerDied += OnPlayerDeath;
+    }
+
     void OnDestroy()
     {
         if (Instance == this)
         {
             Instance = null;
         }
+
+        // Unsubscribe from events
+        PlayerSpawner.OnAnyPlayerDied -= OnPlayerDeath;
     }
 
     public void ActivateCheckpoint(Checkpoint checkpoint)
@@ -60,6 +69,14 @@ public class CheckpointManager : MonoBehaviour
         return activeCheckpoint != null && activeCheckpoint.IsActivated();
     }
 
+    // Called when a player dies - reset everything
+    void OnPlayerDeath()
+    {
+        Debug.Log("[CheckpointManager] Player died - resetting all checkpoints and doors");
+        ResetAllCheckpoints();
+        ResetAllDoors();
+    }
+
     // Reset all checkpoints (useful when restarting a level)
     public void ResetAllCheckpoints()
     {
@@ -68,6 +85,16 @@ public class CheckpointManager : MonoBehaviour
         foreach (Checkpoint checkpoint in allCheckpoints)
         {
             checkpoint.ResetCheckpoint();
+        }
+    }
+
+    // Reset all doors in the scene
+    public void ResetAllDoors()
+    {
+        LevelDoor[] allDoors = FindObjectsByType<LevelDoor>(FindObjectsSortMode.None);
+        foreach (LevelDoor door in allDoors)
+        {
+            door.ResetDoor();
         }
     }
 }

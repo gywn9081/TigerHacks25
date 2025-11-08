@@ -80,6 +80,9 @@ public class LevelDoor : MonoBehaviour
             Debug.LogError("[LevelDoor] ERROR: CheckpointManager.Instance is NULL! Add CheckpointManager to scene.");
         }
 
+        // Subscribe to player death events
+        PlayerSpawner.OnAnyPlayerDied += OnPlayerDeath;
+
         Debug.Log($"[LevelDoor] Requires All Players: {requiresAllPlayers}");
     }
 
@@ -90,6 +93,8 @@ public class LevelDoor : MonoBehaviour
         {
             CheckpointManager.Instance.OnCheckpointActivated -= OnCheckpointActivated;
         }
+
+        PlayerSpawner.OnAnyPlayerDied -= OnPlayerDeath;
 
         // Re-enable any players that were inside the door
         foreach (var kvp in playersInsideDoor)
@@ -398,6 +403,46 @@ public class LevelDoor : MonoBehaviour
     public bool IsUnlocked()
     {
         return isUnlocked;
+    }
+
+    // Called when a player dies - reset the door state
+    void OnPlayerDeath()
+    {
+        Debug.Log("[LevelDoor] Player died - resetting door state");
+        ResetDoor();
+    }
+
+    // Reset the door to its initial locked state
+    public void ResetDoor()
+    {
+        // Release all players from inside the door
+        foreach (var kvp in playersInsideDoor)
+        {
+            PlayerController player = kvp.Key;
+            PlayerDoorState state = kvp.Value;
+
+            if (player != null)
+            {
+                player.enabled = true;
+                if (state.spriteRenderer != null)
+                {
+                    state.spriteRenderer.enabled = true;
+                }
+            }
+        }
+        playersInsideDoor.Clear();
+        playersNearDoor.Clear();
+
+        // Lock the door if it requires a checkpoint
+        if (requiresCheckpoint)
+        {
+            isUnlocked = false;
+            UpdateVisuals();
+            Debug.Log("[LevelDoor] Door locked and reset");
+        }
+
+        // Cancel any ongoing transition
+        isTransitioning = false;
     }
 
     // Visualize the trigger in editor

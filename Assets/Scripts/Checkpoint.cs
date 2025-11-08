@@ -31,6 +31,15 @@ public class Checkpoint : MonoBehaviour
         // Set initial color
         if (spriteRenderer != null)
             spriteRenderer.color = inactiveColor;
+
+        // Subscribe to player death events
+        PlayerSpawner.OnAnyPlayerDied += OnPlayerDeath;
+    }
+
+    void OnDestroy()
+    {
+        // Unsubscribe from events
+        PlayerSpawner.OnAnyPlayerDied -= OnPlayerDeath;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -163,11 +172,20 @@ public class Checkpoint : MonoBehaviour
         ActivateCheckpoint();
     }
 
+    // Called when a player dies - reset the checkpoint state
+    void OnPlayerDeath()
+    {
+        Debug.Log("[Checkpoint] Player died - resetting checkpoint state");
+        ResetCheckpoint();
+    }
+
     // Reset the checkpoint (useful when restarting level)
     public void ResetCheckpoint()
     {
         isActivated = false;
         if (spriteRenderer != null)
             spriteRenderer.color = inactiveColor;
+
+        Debug.Log("[Checkpoint] Checkpoint reset to inactive state");
     }
 }
