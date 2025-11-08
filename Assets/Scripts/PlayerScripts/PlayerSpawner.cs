@@ -1,8 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
+// using System.Diagnostics;
 
-public class PlayerSpawner : MonoBehaviour
+public class PlayerSpawner_1 : MonoBehaviour
 {
     [Header("Player Setup")]
     [SerializeField] private GameObject playerPrefab;
@@ -20,6 +21,15 @@ public class PlayerSpawner : MonoBehaviour
         Color.yellow
     };
     
+    [Header("Keyboard Split Support")]
+    [SerializeField] private bool allowKeyboardSplit = true;
+    [SerializeField] private int maxKeyboardPlayers = 3; // WASD, Arrow Keys, Numpad
+    
+    [Header("Manual Join Settings")]
+    [SerializeField] private bool useManualJoining = false;
+    [SerializeField] private KeyCode player1JoinKey = KeyCode.Return;
+    [SerializeField] private KeyCode player2JoinKey = KeyCode.KeypadEnter;
+    
     private UnityEngine.InputSystem.PlayerInputManager inputManager;
     private List<GameObject> activePlayers = new List<GameObject>();
     
@@ -34,7 +44,9 @@ public class PlayerSpawner : MonoBehaviour
         
         // Configure the PlayerInputManager
         inputManager.playerPrefab = playerPrefab;
-        inputManager.joinBehavior = PlayerJoinBehavior.JoinPlayersWhenButtonIsPressed;
+        inputManager.joinBehavior = useManualJoining 
+            ? PlayerJoinBehavior.JoinPlayersManually 
+            : PlayerJoinBehavior.JoinPlayersWhenButtonIsPressed;
         
         // Note: maxPlayerCount must be set in the Inspector on the PlayerInputManager component
         
@@ -55,10 +67,143 @@ public class PlayerSpawner : MonoBehaviour
     
     void Start()
     {
-        // Enable joining for all players
+        // Pre-spawn keyboard players if split keyboard is enabled
+        if (allowKeyboardSplit && !useManualJoining)
+        {
+            Debug.Log("Key board split enabled letting in players");
+            StartCoroutine(SpawnKeyboardPlayers());
+        }
+        
+        if (useManualJoining)
+        {
+            Debug.Log("Manual joining enabled. Press assigned keys to join players.");
+        }
+        else if (allowKeyboardSplit)
+        {
+            Debug.Log("Keyboard split enabled. Keyboard players will spawn automatically. Gamepad players can join by pressing any button.");
+        }
+        else
+        {
+            Debug.Log("PlayerSpawner ready. Players can join by pressing any button on their device.");
+        }
+    }
+    
+    System.Collections.IEnumerator SpawnKeyboardPlayers()
+    {
+        // Wait a frame for everything to initialize
+        yield return null;
+        
+        // Spawn keyboard players directly without using PlayerInputManager
+        for (int i = 0; i < Mathf.Min(maxKeyboardPlayers, maxPlayers); i++)
+        {
+            SpawnKeyboardPlayer(i);
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+    
+    void SpawnKeyboardPlayer(int index)
+    {
+        if (index >= maxPlayers || playerPrefab == null)
+            return;
+        
+        // Determine spawn position
+        Vector3 spawnPosition;
+        if (index < spawnPoints.Count && spawnPoints[index] != null)
+        {
+            spawnPosition = spawnPoints[index].position;
+        }
+        else
+        {
+            spawnPosition = new Vector3(index * 3f, 0f, 0f);
+        }
+        
+        // Instantiate directly (bypass PlayerInputManager)
+        GameObject player = Instantiate(playerPrefab, spawnPosition, Quaternion.identity);
+        
+        // Determine control scheme and name
+        string schemeName = "Keyboard1";
+        string controlName = "WASD";
+        if (index == 1)
+        {
+            schemeName = "Keyboard2";
+            controlName = "Arrow Keys";
+        }
+        else if (index == 2)
+        {
+            schemeName = "Numpad";
+            controlName = "Numpad 8246";
+        }
+        
+        player.name = $"Player {index + 1} ({controlName})";
+        
+        // Configure PlayerInput to use specific control scheme
+        PlayerInput playerInput = player.GetComponent<PlayerInput>();
+        if (playerInput != null)
+        {
+            playerInput.SwitchCurrentControlScheme(schemeName, UnityEngine.InputSystem.Keyboard.current);
+            playerInput.neverAutoSwitchControlSchemes = true; // Lock to this scheme
+        }
+        
+        // Configure PlayerController
+        PlayerController controller = player.GetComponent<PlayerController>();
+        if (controller != null)
+        {
+            controller.SetPlayerNumber(index + 1);
+            
+            if (index < playerColors.Count)
+            {
+                controller.SetPlayerColor(playerColors[index]);
+            }
+        }
+        
+        activePlayers.Add(player);
+        Debug.Log($"Keyboard Player {index + 1} spawned with {controlName}");
+    }
+    
+    void Update()
+    {
+        if (useManualJoining)
+        {
+            HandleManualJoining();
+        }
+    }
+    
+    void HandleManualJoining()
+    {
+        if (activePlayers.Count >= maxPlayers)
+            return;
+        
+        // Check for player join keys
+        if (Input.GetKeyDown(player1JoinKey) && !IsKeyboardPlayerActive("Keyboard1"))
+        {
+            JoinPlayerWithScheme(0); // Keyboard1 scheme index
+        }
+        
+        if (Input.GetKeyDown(player2JoinKey) && !IsKeyboardPlayerActive("Keyboard2"))
+        {
+            JoinPlayerWithScheme(1); // Keyboard2 scheme index
+        }
+        
+        // Gamepads join by pressing any button (automatic)
+    }
+    
+    bool IsKeyboardPlayerActive(string schemeName)
+    {
+        foreach (GameObject player in activePlayers)
+        {
+            PlayerInput pi = player.GetComponent<PlayerInput>();
+            if (pi != null && pi.currentControlScheme == schemeName)
+                return true;
+        }
+        return false;
+    }
+    
+    void JoinPlayerWithScheme(int controlSchemeIndex)
+    {
         if (inputManager != null)
         {
-            inputManager.EnableJoining();
+            PlayerInput.Instantiate(playerPrefab, controlSchemeIndex, 
+                pairWithDevice: UnityEngine.InputSystem.Keyboard.current);
         }
     }
     
@@ -217,10 +362,9 @@ public class PlayerSpawner : MonoBehaviour
     {
         if (inputManager != null)
         {
-            if (enabled)
-                inputManager.EnableJoining();
-            else
-                inputManager.DisableJoining();
+            inputManager.joinBehavior = enabled 
+                ? PlayerJoinBehavior.JoinPlayersWhenButtonIsPressed 
+                : PlayerJoinBehavior.JoinPlayersManually;
         }
     }
 }
