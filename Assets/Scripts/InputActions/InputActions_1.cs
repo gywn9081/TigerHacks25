@@ -114,7 +114,7 @@ public partial class @InputActions_1: IInputActionCollection2, IDisposable
                     ""name"": ""Action"",
                     ""type"": ""Button"",
                     ""id"": ""c3d4e5f6-a7b8-9c0d-1e2f-3a4b5c6d7e8f"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -245,7 +245,7 @@ public partial class @InputActions_1: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""b0c1d2e3-f4a5-6b7c-8d9e-0f1a2b3c4d5f"",
-                    ""path"": ""<Keyboard>/numpad8"",
+                    ""path"": ""<Keyboard>/i"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Numpad"",
@@ -256,7 +256,7 @@ public partial class @InputActions_1: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""c1d2e3f4-a5b6-7c8d-9e0f-1a2b3c4d5e6a"",
-                    ""path"": ""<Keyboard>/numpad2"",
+                    ""path"": ""<Keyboard>/k"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Numpad"",
@@ -267,7 +267,7 @@ public partial class @InputActions_1: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""d2e3f4a5-b6c7-8d9e-0f1a-2b3c4d5e6f7b"",
-                    ""path"": ""<Keyboard>/numpad4"",
+                    ""path"": ""<Keyboard>/j"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Numpad"",
@@ -278,7 +278,7 @@ public partial class @InputActions_1: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""e3f4a5b6-c7d8-9e0f-1a2b-3c4d5e6f7a8c"",
-                    ""path"": ""<Keyboard>/numpad6"",
+                    ""path"": ""<Keyboard>/l"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Numpad"",
@@ -377,7 +377,7 @@ public partial class @InputActions_1: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f4a5b6c7-d8e9-0f1a-2b3c-4d5e6f7a8b9d"",
-                    ""path"": ""<Keyboard>/numpad5"",
+                    ""path"": ""<Keyboard>/i"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Numpad"",

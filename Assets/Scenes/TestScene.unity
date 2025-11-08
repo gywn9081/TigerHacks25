@@ -514,10 +514,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSpawner_1
   playerPrefab: {fileID: 1479121755662474910, guid: a89ef660cdfc2329aa7f02181df3b6d4, type: 3}
-  maxPlayers: 2
+  maxPlayers: 4
   spawnPoints:
   - {fileID: 530928715}
   - {fileID: 1608128112}
+  - {fileID: 1366836836}
   playerColors:
   - {r: 1, g: 0, b: 0, a: 1}
   - {r: 0, g: 0, b: 1, a: 1}
@@ -526,8 +527,6 @@ MonoBehaviour:
   allowKeyboardSplit: 1
   maxKeyboardPlayers: 3
   useManualJoining: 0
-  player1JoinKey: 13
-  player2JoinKey: 271
 --- !u!1 &1179651655
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,6 +558,7 @@ Transform:
   m_Children:
   - {fileID: 530928715}
   - {fileID: 1608128112}
+  - {fileID: 1366836836}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1333877381
@@ -698,6 +698,37 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1366836835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1366836836}
+  m_Layer: 0
+  m_Name: SpawnPoint3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1366836836
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366836835}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.06, y: 3.07, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1179651656}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1535571513
 GameObject:
   m_ObjectHideFlags: 0
