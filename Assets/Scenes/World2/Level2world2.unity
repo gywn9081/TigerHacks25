@@ -730,7 +730,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: -1912280377796870228, guid: 74d3b32cbd2f5fa48a81b20760ba3a7d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -793,7 +793,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.21133333}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 100, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -2683,7 +2683,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: -1912280377796870228, guid: 74d3b32cbd2f5fa48a81b20760ba3a7d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
@@ -2746,7 +2746,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 2, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -3057,6 +3057,22 @@ PrefabInstance:
     - target: {fileID: 2678655222664690768, guid: d6ad7db60d13028528aab66a166cd37e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361473152865900213, guid: d6ad7db60d13028528aab66a166cd37e, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.6531257
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361473152865900213, guid: d6ad7db60d13028528aab66a166cd37e, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.06995689
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361473152865900213, guid: d6ad7db60d13028528aab66a166cd37e, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.20276348
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361473152865900213, guid: d6ad7db60d13028528aab66a166cd37e, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4289139252
       objectReference: {fileID: 0}
     - target: {fileID: 6847420028906650633, guid: d6ad7db60d13028528aab66a166cd37e, type: 3}
       propertyPath: m_Name
