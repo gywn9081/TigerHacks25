@@ -1463,6 +1463,7 @@ GameObject:
   - component: {fileID: 1574001554}
   - component: {fileID: 1574001553}
   - component: {fileID: 1574001552}
+  - component: {fileID: 1574001555}
   m_Layer: 5
   m_Name: Camera
   m_TagString: Untagged
@@ -1592,6 +1593,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1574001555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574001550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 125ebad9e1a084d4097e4d67a3a270d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LetterboxCamera
+  targetAspect: 1.7777778
 --- !u!1 &1726836151
 GameObject:
   m_ObjectHideFlags: 0
