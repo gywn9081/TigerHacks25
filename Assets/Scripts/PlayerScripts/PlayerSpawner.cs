@@ -24,11 +24,16 @@ public class PlayerSpawner : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("PlayerSpawner Start() running on " + gameObject.name);
         // Pre-spawn keyboard players if split keyboard is enabled
         if (allowKeyboardSplit)
         {
-            Debug.Log("Keyboard split enabled, spawning players");
+            Debug.Log("Keyboard split enabled, spawning players\n");
             StartCoroutine(SpawnKeyboardPlayers());
+        }
+            else
+        {
+            Debug.Log("Keyboard split disabled, waiting for manual join");
         }
     }
 
