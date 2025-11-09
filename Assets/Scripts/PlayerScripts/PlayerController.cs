@@ -218,12 +218,22 @@ public class PlayerController : MonoBehaviour
     }
     
     // Visualize ground check in editor
-    void OnDrawGizmosSelected()
+    void OnDrawGizmos()
     {
         if (jumpCheck != null)
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireCube(jumpCheck.position, new Vector3(jumpBarRange.x, jumpBarRange.y, 0f));
+        }
+        if (groundCheck != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireCube(groundCheck.position, new Vector3(groundBarRange.x, groundBarRange.y, 0f));
+        }
+        if (iceCheck != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireCube(iceCheck.position, new Vector3(iceBarRange.x, iceBarRange.y, 0f));
         }
     }
     
