@@ -37,7 +37,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Blur_Offset: 0.001265
+    - _Blur_Offset: 0.001178
     - _Number_of_Scan_Lines: 300
     - _Scan_Lines_Speed: 0
     m_Colors:
