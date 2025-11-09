@@ -18,20 +18,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform jumpCheck;
     [SerializeField] private float jumpCheckRadius = 0.2f;
     [SerializeField] private LayerMask jumpableLayers;
-    private bool isJumpable;
+    [SerializeField] private bool isJumpable;
 
     [Header("Material Conditions")]
     [SerializeField] private Transform iceCheck;
     [SerializeField] private float iceCheckRadius = 0.2f;
     [SerializeField] private float iceScaling = 0.1f;
     [SerializeField] private LayerMask iceLayers;
-    private bool isIcy;
+    [SerializeField] private bool isIcy;
 
     [Header("Default Material")]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.2f;
     [SerializeField] private LayerMask groundLayers;
-    private bool isGrounded;
+    [SerializeField] private bool isGrounded;
     private Collider2D playerCollider;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
