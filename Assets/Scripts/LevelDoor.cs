@@ -4,12 +4,17 @@ using UnityEngine.InputSystem;
 using System.Collections;
 using System.Collections.Generic;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 public class LevelDoor : MonoBehaviour
 {
     [Header("Scene Settings")]
-    [SerializeField] private string nextSceneName;
-    [Tooltip("Leave at -1 to use scene name, or specify a build index")]
-    [SerializeField] private int nextSceneBuildIndex = -1;
+#if UNITY_EDITOR
+    [SerializeField] private SceneAsset sceneAsset;
+#endif
+    [SerializeField, HideInInspector] private string nextSceneName;
 
     [Header("Door Settings")]
     [SerializeField] private bool requiresCheckpoint = true;
@@ -392,20 +397,7 @@ public class LevelDoor : MonoBehaviour
         yield return new WaitForSeconds(transitionDelay);
 
         // Load next scene
-        if (nextSceneBuildIndex >= 0)
-        {
-            // Load by build index
-            if (nextSceneBuildIndex < SceneManager.sceneCountInBuildSettings)
-            {
-                Debug.Log($"Loading scene at build index {nextSceneBuildIndex}");
-                SceneManager.LoadScene(nextSceneBuildIndex);
-            }
-            else
-            {
-                Debug.LogError($"Scene build index {nextSceneBuildIndex} is out of range! Total scenes: {SceneManager.sceneCountInBuildSettings}");
-            }
-        }
-        else if (!string.IsNullOrEmpty(nextSceneName))
+        if (!string.IsNullOrEmpty(nextSceneName))
         {
             Debug.Log($"Loading scene: {nextSceneName}");
             SceneManager.LoadScene(nextSceneName);
@@ -485,4 +477,12 @@ public class LevelDoor : MonoBehaviour
             Gizmos.DrawWireCube(transform.position, col.bounds.size);
         }
     }
+
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        if (sceneAsset != null)
+            nextSceneName = sceneAsset.name;
+    }
+#endif
 }
