@@ -738,6 +738,7 @@ GameObject:
   - component: {fileID: 540510741}
   - component: {fileID: 540510740}
   - component: {fileID: 540510742}
+  - component: {fileID: 540510743}
   m_Layer: 5
   m_Name: Level 2 Image
   m_TagString: Untagged
@@ -846,7 +847,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 540510740}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 540510743}
+        m_TargetAssemblyTypeName: MenuButton, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &540510743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540510738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a17ee0b0b958f054091856c72da3a313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuButton
+  sceneAsset: {fileID: 102900000, guid: b4bedf14d6eba8d46b21db871d6caf09, type: 3}
+  sceneToLoad: Level2
 --- !u!1 &691320725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,6 +1369,7 @@ GameObject:
   - component: {fileID: 1530361915}
   - component: {fileID: 1530361914}
   - component: {fileID: 1530361916}
+  - component: {fileID: 1530361917}
   m_Layer: 5
   m_Name: Level 3 Image
   m_TagString: Untagged
@@ -1450,7 +1478,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1530361914}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1530361917}
+        m_TargetAssemblyTypeName: MenuButton, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1530361917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530361912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a17ee0b0b958f054091856c72da3a313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuButton
+  sceneAsset: {fileID: 102900000, guid: e68bc9811f8a462479a62d9228455431, type: 3}
+  sceneToLoad: Level3
 --- !u!1 &1574001550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,6 +1806,7 @@ GameObject:
   - component: {fileID: 1996374860}
   - component: {fileID: 1996374859}
   - component: {fileID: 1996374861}
+  - component: {fileID: 1996374862}
   m_Layer: 5
   m_Name: Level 1 Image
   m_TagString: Untagged
@@ -1860,7 +1915,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1996374859}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1996374862}
+        m_TargetAssemblyTypeName: MenuButton, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1996374862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996374857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a17ee0b0b958f054091856c72da3a313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuButton
+  sceneAsset: {fileID: 102900000, guid: 9ded7ba60a29e7c4584bae17a52bf2b8, type: 3}
+  sceneToLoad: Level1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
