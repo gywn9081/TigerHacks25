@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9ebc2b2ea1bd3ba41a08b82150cd1236
+guid: e8a60260ed72da64b93c401cf4c817a6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8506568253206811278
-    second: World1Spike_0
+      213: 2283067721225969601
+    second: RocketFlame_0006_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,18 +40,18 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,6 +96,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< HEAD
   - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
@@ -109,17 +110,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+=======
+>>>>>>> 6ac6f87f6fe40c57532aec01678ce8d8fca40aaa
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: World1Spike_0
+      name: RocketFlame_0006_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 27d2ef15e3992f980800000000000000
-      internalID: -8506568253206811278
+      spriteID: 1cf95d90ff51faf10800000000000000
+      internalID: 2283067721225969601
       vertices: []
       indices: 
       edges: []
@@ -138,7 +141,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +151,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      World1Spike_0: -8506568253206811278
+      RocketFlame_0006_0: 2283067721225969601
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

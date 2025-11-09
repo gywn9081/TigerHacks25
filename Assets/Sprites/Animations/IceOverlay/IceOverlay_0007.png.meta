@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 9ebc2b2ea1bd3ba41a08b82150cd1236
+guid: 155850eab8ccd5544bb0b404a36f735a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8506568253206811278
-    second: World1Spike_0
+      213: -162908875385147862
+    second: IceOverlay_0007_0
+  - first:
+      213: -2034284821264328941
+    second: IceOverlay_0007_1
+  - first:
+      213: 1166793702440523622
+    second: IceOverlay_0007_2
+  - first:
+      213: 5912485912307304977
+    second: IceOverlay_0007_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,18 +49,18 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,30 +105,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: World1Spike_0
+      name: IceOverlay_0007_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 27d2ef15e3992f980800000000000000
-      internalID: -8506568253206811278
+      spriteID: a2ee8efad3b3dbdf0800000000000000
+      internalID: -162908875385147862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0007_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1063
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3171290bbb4c4c3e0800000000000000
+      internalID: -2034284821264328941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0007_2
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1060
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6675120c0b8413010800000000000000
+      internalID: 1166793702440523622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0007_3
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 1059
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11a049e8c9e5d0250800000000000000
+      internalID: 5912485912307304977
       vertices: []
       indices: 
       edges: []
@@ -138,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      World1Spike_0: -8506568253206811278
+      IceOverlay_0007_0: -162908875385147862
+      IceOverlay_0007_1: -2034284821264328941
+      IceOverlay_0007_2: 1166793702440523622
+      IceOverlay_0007_3: 5912485912307304977
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
