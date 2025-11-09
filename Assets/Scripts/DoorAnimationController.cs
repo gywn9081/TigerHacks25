@@ -29,13 +29,13 @@ public class DoorAnimationController : MonoBehaviour
     void Start()
     {
         // Subscribe to player death events to close door
-        PlayerSpawner.OnAnyPlayerDied += OnPlayerDeath;
+        DeathSystem.OnAnyPlayerDied += OnPlayerDeath;
     }
 
     void OnDestroy()
     {
         // Unsubscribe from events
-        PlayerSpawner.OnAnyPlayerDied -= OnPlayerDeath;
+        DeathSystem.OnAnyPlayerDied -= OnPlayerDeath;
     }
 
     // Call this method to open the door

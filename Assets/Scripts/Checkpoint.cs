@@ -33,13 +33,13 @@ public class Checkpoint : MonoBehaviour
             spriteRenderer.color = inactiveColor;
 
         // Subscribe to player death events
-        PlayerSpawner.OnAnyPlayerDied += OnPlayerDeath;
+        DeathSystem.OnAnyPlayerDied += OnPlayerDeath;
     }
 
     void OnDestroy()
     {
         // Unsubscribe from events
-        PlayerSpawner.OnAnyPlayerDied -= OnPlayerDeath;
+        DeathSystem.OnAnyPlayerDied -= OnPlayerDeath;
     }
 
     void OnTriggerEnter2D(Collider2D other)
