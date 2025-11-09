@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!212 &15153971 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8612134503959617381, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
+  m_PrefabInstance: {fileID: 1697225771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &65701367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -531,7 +536,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: -1912280377796870228, guid: 74d3b32cbd2f5fa48a81b20760ba3a7d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -594,7 +599,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.21133333}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 100, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -2054,6 +2059,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5327673693253780048, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
+      propertyPath: activeColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327673693253780048, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
+      propertyPath: activeColor.b
+      value: 0.73333335
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327673693253780048, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
+      propertyPath: activeColor.g
+      value: 0.47450984
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327673693253780048, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
+      propertyPath: activeColor.r
+      value: 0.227451
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327673693253780048, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 15153971}
+    - target: {fileID: 5327673693253780048, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
+      propertyPath: inactiveColor.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8547249277177575385, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
       propertyPath: m_Name
       value: Key Card
@@ -2128,7 +2157,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: -1912280377796870228, guid: 74d3b32cbd2f5fa48a81b20760ba3a7d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
@@ -2148,7 +2177,7 @@ Transform:
   m_GameObject: {fileID: 1807018529}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: 3.2, z: 0}
+  m_LocalPosition: {x: -4, y: 3.2, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2191,7 +2220,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 2, y: 1}
     adaptiveTilingThreshold: 0.5
