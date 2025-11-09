@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 3872306517389786821}
   - component: {fileID: 8236574073315933300}
   - component: {fileID: 2504897298988546265}
-  - component: {fileID: 7656709128184548034}
   - component: {fileID: -30039920801873013}
   - component: {fileID: 1177254335983006675}
   - component: {fileID: 8765397488303723017}
@@ -203,48 +202,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7656709128184548034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479121755662474910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
-  m_Actions: {fileID: -944628639613478452, guid: 570ee66d8f047fedbad9e338d5ed5b24, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d
-    m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/Gamepad/leftStick/up,/Gamepad1/leftStick/up,/Gamepad2/leftStick/up,/Gamepad3/leftStick/up,/Gamepad/leftStick/down,/Gamepad1/leftStick/down,/Gamepad2/leftStick/down,/Gamepad3/leftStick/down,/Gamepad/leftStick/left,/Gamepad1/leftStick/left,/Gamepad2/leftStick/left,/Gamepad3/leftStick/left,/Gamepad/leftStick/right,/Gamepad1/leftStick/right,/Gamepad2/leftStick/right,/Gamepad3/leftStick/right,/Gamepad/dpad,/Gamepad1/dpad,/Gamepad2/dpad,/Gamepad3/dpad]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e
-    m_ActionName: 'Player/Jump[/Keyboard/space,/Keyboard/numpad0,/Gamepad/buttonSouth,/Gamepad1/buttonSouth,/Gamepad2/buttonSouth,/Gamepad3/buttonSouth]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: c3d4e5f6-a7b8-9c0d-1e2f-3a4b5c6d7e8f
-    m_ActionName: 'Player/Action[/Keyboard/leftShift,/Keyboard/numpadEnter,/Gamepad/buttonWest,/Gamepad1/buttonWest,/Gamepad2/buttonWest,/Gamepad3/buttonWest]'
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard1
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!114 &-30039920801873013
 MonoBehaviour:
   m_ObjectHideFlags: 0

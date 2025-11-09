@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1592521484334263461}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.01857141, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.28571427}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 2443773631368838473}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.01857141, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.28571427}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -87,7 +87,7 @@ Transform:
   m_GameObject: {fileID: 8186948494690792981}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.9171428, y: 0.01857141, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.28571427}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -105,10 +105,10 @@ GameObject:
   - component: {fileID: 5948458715901276674}
   - component: {fileID: 8428207093628019025}
   - component: {fileID: 5641792115650287840}
-  - component: {fileID: 7627170866543438269}
   - component: {fileID: 1026651254182904991}
   - component: {fileID: 8181416612195249858}
   - component: {fileID: 2595693428607600008}
+  - component: {fileID: -5276695310375948397}
   m_Layer: 7
   m_Name: Player 2
   m_TagString: Untagged
@@ -265,36 +265,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7627170866543438269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8847299149429340525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
-  m_Actions: {fileID: -944628639613478452, guid: 570ee66d8f047fedbad9e338d5ed5b24, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard1
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!114 &1026651254182904991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,28 +277,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ce7e1491ff98c0aa82b2b82603de1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController_1
-  playerNumber: 2
+  playerNumber: 1
   playerColor: {r: 1, g: 1, b: 1, a: 1}
   moveSpeed: 5
+  normalSpeed: 5
   jumpForce: 12
   acceleration: 40
   normalAcceleration: 50
-  jumpCheck: {fileID: 0}
-  jumpCheckRadius: 0.2
+  jumpCheck: {fileID: 1503722240627361190}
+  jumpBarRange: {x: 0, y: 0}
+  jumpBarAngle: 0
   jumpableLayers:
     serializedVersion: 2
-    m_Bits: 192
-  iceCheck: {fileID: 0}
-  iceCheckRadius: 0.2
+    m_Bits: 1216
+  isJumpable: 0
+  iceCheck: {fileID: 8220515116772591328}
+  iceBarRange: {x: 0, y: 0}
+  iceAngle: 0
   iceScaling: 0.1
   iceLayers:
     serializedVersion: 2
-    m_Bits: 0
-  groundCheck: {fileID: 5425966107367030537}
-  groundCheckRadius: 0.2
+    m_Bits: 1024
+  isIcy: 0
+  groundCheck: {fileID: 4126118778125374793}
+  groundBarRange: {x: 0, y: 0}
+  groundBarAngle: 0
   groundLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1984
   jumpBoots: 0
 --- !u!114 &8181416612195249858
 MonoBehaviour:
@@ -370,3 +346,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-5276695310375948397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8847299149429340525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: 570ee66d8f047fedbad9e338d5ed5b24, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard1
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
