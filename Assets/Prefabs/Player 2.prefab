@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1516238061351495846
+--- !u!1 &1592521484334263461
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,25 +8,87 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5425966107367030537}
-  m_Layer: 0
+  - component: {fileID: 1503722240627361190}
+  m_Layer: 7
+  m_Name: JumpableCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1503722240627361190
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592521484334263461}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.01857141, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0.28571427}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8084752518184358021}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2443773631368838473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4126118778125374793}
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5425966107367030537
+--- !u!4 &4126118778125374793
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1516238061351495846}
+  m_GameObject: {fileID: 2443773631368838473}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.01857141, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0.28571427}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8084752518184358021}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8186948494690792981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8220515116772591328}
+  m_Layer: 7
+  m_Name: IceSkates
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8220515116772591328
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8186948494690792981}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.9171428, y: 0.01857141, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0.28571427}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8084752518184358021}
@@ -47,7 +109,7 @@ GameObject:
   - component: {fileID: 1026651254182904991}
   - component: {fileID: 8181416612195249858}
   - component: {fileID: 2595693428607600008}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +129,9 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 5425966107367030537}
+  - {fileID: 4126118778125374793}
+  - {fileID: 1503722240627361190}
+  - {fileID: 8220515116772591328}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5948458715901276674
@@ -154,7 +218,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &5641792115650287840
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -242,16 +306,30 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62ce7e1491ff98c0aa82b2b82603de1d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  playerNumber: 1
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController_1
+  playerNumber: 2
   playerColor: {r: 1, g: 1, b: 1, a: 1}
-  moveSpeed: 7
+  moveSpeed: 5
   jumpForce: 12
-  groundCheck: {fileID: 5425966107367030537}
-  groundCheckRadius: 0.2
+  acceleration: 50
+  normalAcceleration: 50
+  jumpCheck: {fileID: 1503722240627361190}
+  jumpCheckRadius: 0.2
   jumpableLayers:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 1216
+  iceCheck: {fileID: 8220515116772591328}
+  iceCheckRadius: 0.3
+  iceScaling: 0.1
+  iceLayers:
+    serializedVersion: 2
+    m_Bits: 1024
+  groundCheck: {fileID: 4126118778125374793}
+  groundCheckRadius: 0.2
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 1984
+  jumpBoots: 0
 --- !u!114 &8181416612195249858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,7 +346,7 @@ MonoBehaviour:
   detectionBoxOffset: {x: 0, y: 0.49}
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   maxStackDepth: 10
 --- !u!95 &2595693428607600008
 Animator:
