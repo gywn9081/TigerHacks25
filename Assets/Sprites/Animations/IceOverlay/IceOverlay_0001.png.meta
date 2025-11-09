@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: 64dbf23fceb8bc6478fc47c67b4172c0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3827643074330606487
+    second: IceOverlay_0001_0
+  - first:
+      213: 7459573406605188635
+    second: IceOverlay_0001_1
+  - first:
+      213: -4792374049863652281
+    second: IceOverlay_0001_2
+  - first:
+      213: 8776473924059993525
+    second: IceOverlay_0001_3
+  - first:
+      213: -3982900996971618292
+    second: IceOverlay_0001_4
+  - first:
+      213: -4692386363107333900
+    second: IceOverlay_0001_5
+  - first:
+      213: 947731892684245555
+    second: IceOverlay_0001_6
+  - first:
+      213: -8928835581943580105
+    second: IceOverlay_0001_7
+  - first:
+      213: -6601043444699554660
+    second: IceOverlay_0001_8
+  - first:
+      213: -5629808516234741076
+    second: IceOverlay_0001_9
+  - first:
+      213: 8246307008472911845
+    second: IceOverlay_0001_10
+  - first:
+      213: 1175416871042670924
+    second: IceOverlay_0001_11
+  - first:
+      213: 5511804131073503272
+    second: IceOverlay_0001_12
+  - first:
+      213: 1197149099918110172
+    second: IceOverlay_0001_13
+  - first:
+      213: 3177219270561888024
+    second: IceOverlay_0001_14
+  - first:
+      213: 7886461473382030658
+    second: IceOverlay_0001_15
+  - first:
+      213: 5890193507973214616
+    second: IceOverlay_0001_16
+  - first:
+      213: -7817145420522103225
+    second: IceOverlay_0001_17
+  - first:
+      213: -2620280080787703372
+    second: IceOverlay_0001_18
+  - first:
+      213: 5394053299757473797
+    second: IceOverlay_0001_19
+  - first:
+      213: -4940960562065248417
+    second: IceOverlay_0001_20
+  - first:
+      213: -8512585998293792708
+    second: IceOverlay_0001_21
+  - first:
+      213: 8578977176373254406
+    second: IceOverlay_0001_22
+  - first:
+      213: -2927519337411920429
+    second: IceOverlay_0001_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: IceOverlay_0001_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 328
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9644a8357ea71eac0800000000000000
+      internalID: -3827643074330606487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0001_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 312
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1e17a4ad7ab58760800000000000000
+      internalID: 7459573406605188635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0001_2
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 91
+        width: 20
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74ca31751311e7db0800000000000000
+      internalID: -4792374049863652281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0001_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 258
+        width: 12
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b51310c88c4cc970800000000000000
+      internalID: 8776473924059993525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0001_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0025f345a4e9b8c0800000000000000
+      internalID: -3982900996971618292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0001_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 227
+        width: 21
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f8a91ec67b41eeb0800000000000000
+      internalID: -4692386363107333900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0001_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 197
+        width: 15
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33ac0c59225072d00800000000000000
+      internalID: 947731892684245555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0001_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 83
+        width: 24
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73a72606857661480800000000000000
+      internalID: -8928835581943580105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0001_8
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 212
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9c13cbf5f16464a0800000000000000
+      internalID: -6601043444699554660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0001_9
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 219
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caafb548bf6eed1b0800000000000000
+      internalID: -5629808516234741076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0001_10
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 216
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ef87dc8884c07270800000000000000
+      internalID: 8246307008472911845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0001_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 81
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c41ef75aa6bef4010800000000000000
+      internalID: 1175416871042670924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0001_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 258
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 820ba2887acdd7c40800000000000000
+      internalID: 5511804131073503272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0001_13
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 0
+        width: 755
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdd2ccb73c02d9010800000000000000
+      internalID: 1197149099918110172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0001_14
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 0
+        width: 116
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 817fd5bc710c71c20800000000000000
+      internalID: 3177219270561888024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0001_15
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24d5dbffce6527d60800000000000000
+      internalID: 7886461473382030658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0001_16
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 6
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8913e05b9cb2eb150800000000000000
+      internalID: 5890193507973214616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0001_17
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 0
+        width: 101
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74e553438abe38390800000000000000
+      internalID: -7817145420522103225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0001_18
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 0
+        width: 151
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b9fd9c3625e2abd0800000000000000
+      internalID: -2620280080787703372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0001_19
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 2
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 500619fa5e68bda40800000000000000
+      internalID: 5394053299757473797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0001_20
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 0
+        width: 533
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5fe2e01c8e2e6bb0800000000000000
+      internalID: -4940960562065248417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0001_21
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 0
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c380cbbd2283dd980800000000000000
+      internalID: -8512585998293792708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0001_22
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 0
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60959edd946ae0770800000000000000
+      internalID: 8578977176373254406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0001_23
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 0
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ddb97c5cac5f57d0800000000000000
+      internalID: -2927519337411920429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      IceOverlay_0001_0: -3827643074330606487
+      IceOverlay_0001_1: 7459573406605188635
+      IceOverlay_0001_10: 8246307008472911845
+      IceOverlay_0001_11: 1175416871042670924
+      IceOverlay_0001_12: 5511804131073503272
+      IceOverlay_0001_13: 1197149099918110172
+      IceOverlay_0001_14: 3177219270561888024
+      IceOverlay_0001_15: 7886461473382030658
+      IceOverlay_0001_16: 5890193507973214616
+      IceOverlay_0001_17: -7817145420522103225
+      IceOverlay_0001_18: -2620280080787703372
+      IceOverlay_0001_19: 5394053299757473797
+      IceOverlay_0001_2: -4792374049863652281
+      IceOverlay_0001_20: -4940960562065248417
+      IceOverlay_0001_21: -8512585998293792708
+      IceOverlay_0001_22: 8578977176373254406
+      IceOverlay_0001_23: -2927519337411920429
+      IceOverlay_0001_3: 8776473924059993525
+      IceOverlay_0001_4: -3982900996971618292
+      IceOverlay_0001_5: -4692386363107333900
+      IceOverlay_0001_6: 947731892684245555
+      IceOverlay_0001_7: -8928835581943580105
+      IceOverlay_0001_8: -6601043444699554660
+      IceOverlay_0001_9: -5629808516234741076
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
