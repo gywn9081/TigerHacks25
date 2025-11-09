@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9ebc2b2ea1bd3ba41a08b82150cd1236
+guid: 7ad7178aa62f823468f3b821ea06fb06
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8506568253206811278
-    second: World1Spike_0
+      213: -3874318096018639104
+    second: World1Background_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,24 +96,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: World1Spike_0
+      name: World1Background_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 27d2ef15e3992f980800000000000000
-      internalID: -8506568253206811278
+      spriteID: 007f0fbf738ab3ac0800000000000000
+      internalID: -3874318096018639104
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      World1Spike_0: -8506568253206811278
+      World1Background_0: -3874318096018639104
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -175,7 +175,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 10, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
@@ -461,8 +461,6 @@ MonoBehaviour:
   allowKeyboardSplit: 1
   maxKeyboardPlayers: 4
   useManualJoining: 0
-  player1JoinKey: 32
-  player2JoinKey: 273
 --- !u!95 &837153256
 Animator:
   serializedVersion: 7
@@ -612,9 +610,9 @@ BoxCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0.125, y: 0.125, z: 0.125, w: 0.125}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 5}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
@@ -816,7 +814,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6146870941376549169, guid: 718d2c4cff258c543b08591f1d597c5b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 718d2c4cff258c543b08591f1d597c5b, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -906,7 +904,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1936349565
