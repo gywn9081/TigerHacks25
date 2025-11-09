@@ -2678,6 +2678,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 3962530525236238452, guid: 37aceb64fed39db4da9d6eff0cadf870, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3962530525236238452, guid: 37aceb64fed39db4da9d6eff0cadf870, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5287903847993374715, guid: 37aceb64fed39db4da9d6eff0cadf870, type: 3}
       propertyPath: sceneAsset
       value: 

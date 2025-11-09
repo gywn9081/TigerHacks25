@@ -1062,6 +1062,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 3962530525236238452, guid: 37aceb64fed39db4da9d6eff0cadf870, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3962530525236238452, guid: 37aceb64fed39db4da9d6eff0cadf870, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5287903847993374715, guid: 37aceb64fed39db4da9d6eff0cadf870, type: 3}
       propertyPath: sceneAsset
       value: 
@@ -2076,6 +2084,22 @@ PrefabInstance:
     - target: {fileID: 2890516395830738973, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327673693253780048, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
+      propertyPath: activeColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327673693253780048, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
+      propertyPath: activeColor.b
+      value: 0.21568629
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327673693253780048, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
+      propertyPath: activeColor.g
+      value: 0.21568629
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327673693253780048, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
+      propertyPath: activeColor.r
+      value: 0.21568629
       objectReference: {fileID: 0}
     - target: {fileID: 8547249277177575385, guid: d768695f8ce14bd4fbd88630bb339c97, type: 3}
       propertyPath: m_Name
