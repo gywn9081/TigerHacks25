@@ -126,7 +126,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.21, y: -0.59, z: 0}
-  m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4126118778125374793}
@@ -257,13 +257,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.29, y: 0.29}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &7627170866543438269
 MonoBehaviour:
@@ -311,24 +311,24 @@ MonoBehaviour:
   playerColor: {r: 1, g: 1, b: 1, a: 1}
   moveSpeed: 5
   jumpForce: 12
-  acceleration: 50
+  acceleration: 40
   normalAcceleration: 50
-  jumpCheck: {fileID: 1503722240627361190}
+  jumpCheck: {fileID: 0}
   jumpCheckRadius: 0.2
   jumpableLayers:
     serializedVersion: 2
-    m_Bits: 1216
-  iceCheck: {fileID: 8220515116772591328}
-  iceCheckRadius: 0.3
+    m_Bits: 192
+  iceCheck: {fileID: 0}
+  iceCheckRadius: 0.2
   iceScaling: 0.1
   iceLayers:
     serializedVersion: 2
-    m_Bits: 1024
-  groundCheck: {fileID: 4126118778125374793}
+    m_Bits: 0
+  groundCheck: {fileID: 5425966107367030537}
   groundCheckRadius: 0.2
   groundLayers:
     serializedVersion: 2
-    m_Bits: 1984
+    m_Bits: 0
   jumpBoots: 0
 --- !u!114 &8181416612195249858
 MonoBehaviour:
