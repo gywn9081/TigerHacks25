@@ -1120,8 +1120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 277b1215000e6d245a6621ea0b6332f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelDoor
-  sceneAsset: {fileID: 0}
-  nextSceneName: 
+  sceneAsset: {fileID: 102900000, guid: e1dfe2d9dec7138459495e43db5a90e6, type: 3}
+  nextSceneName: Level2world2
   requiresCheckpoint: 1
   requiresAllPlayers: 1
   lockedColor: {r: 1, g: 1, b: 1, a: 1}
