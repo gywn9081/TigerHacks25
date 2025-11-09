@@ -247,7 +247,7 @@ public class PlayerController : MonoBehaviour
     }
     public void OnDeath()
     {
-        PlayerSpawner.TriggerPlayerDeath();
+        DeathSystem.TriggerPlayerDeath();
     }
 
 }

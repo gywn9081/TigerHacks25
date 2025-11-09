@@ -259,7 +259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController_1
   playerNumber: 1
   playerColor: {r: 1, g: 1, b: 1, a: 1}
-  moveSpeed: 7
+  moveSpeed: 5
   jumpForce: 12
   acceleration: 50
   normalAcceleration: 50
@@ -278,8 +278,7 @@ MonoBehaviour:
   groundCheckRadius: 0.2
   groundLayers:
     serializedVersion: 2
-    m_Bits: 960
-  jumpBoots: 0
+    m_Bits: 1984
 --- !u!114 &1177254335983006675
 MonoBehaviour:
   m_ObjectHideFlags: 0

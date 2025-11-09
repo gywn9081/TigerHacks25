@@ -84,7 +84,7 @@ public class LevelDoor : MonoBehaviour
         }
 
         // Subscribe to player death events
-        PlayerSpawner.OnAnyPlayerDied += OnPlayerDeath;
+        DeathSystem.OnAnyPlayerDied += OnPlayerDeath;
 
         Debug.Log($"[LevelDoor] Requires All Players: {requiresAllPlayers}");
     }
@@ -97,7 +97,7 @@ public class LevelDoor : MonoBehaviour
             CheckpointManager.Instance.OnCheckpointActivated -= OnCheckpointActivated;
         }
 
-        PlayerSpawner.OnAnyPlayerDied -= OnPlayerDeath;
+        DeathSystem.OnAnyPlayerDied -= OnPlayerDeath;
 
         // Re-enable any players that were inside the door
         foreach (var kvp in playersInsideDoor)
