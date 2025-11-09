@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6a86e9db23cb47f4b86c1ffee71a8cb5
+guid: 7ad7178aa62f823468f3b821ea06fb06
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1912280377796870228
-    second: World2Spike_0
+      213: -3874318096018639104
+    second: World1Background_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,15 +40,15 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: World2Spike_0
+      name: World1Background_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cafb77ac0273675e0800000000000000
-      internalID: -1912280377796870228
+      spriteID: 007f0fbf738ab3ac0800000000000000
+      internalID: -3874318096018639104
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      World2Spike_0: -1912280377796870228
+      World1Background_0: -3874318096018639104
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
