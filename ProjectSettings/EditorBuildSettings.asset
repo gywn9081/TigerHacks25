@@ -56,6 +56,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/World3/YOUWON!!!.unity
     guid: ba42ba854dab0d34599d5cbb66a9c8b1
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: d6f587a110d6d574c863c572d99a36ea
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
