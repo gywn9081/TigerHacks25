@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 7935accc23e541f4fba532ffeb10f76d
+guid: e22ffa602b8067847b866e4129c6bd6d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9048816497546619378
-    second: LaserEnd_0009_0
+      213: 1510504952218885104
+    second: VenusAcid_0006_0
+  - first:
+      213: 8587858273548769720
+    second: VenusAcid_0006_1
+  - first:
+      213: -3445872339967489028
+    second: VenusAcid_0006_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LaserEnd_0009_0
+      name: VenusAcid_0006_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 4
+        y: 92
+        width: 22
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e061a0296552c6280800000000000000
-      internalID: -9048816497546619378
+      spriteID: 0fb9974404466f410800000000000000
+      internalID: 1510504952218885104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VenusAcid_0006_1
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 83
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b9164079933e2770800000000000000
+      internalID: 8587858273548769720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VenusAcid_0006_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfbc4e22d5dcd20d0800000000000000
+      internalID: -3445872339967489028
       vertices: []
       indices: 
       edges: []
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      LaserEnd_0009_0: -9048816497546619378
+      VenusAcid_0006_0: 1510504952218885104
+      VenusAcid_0006_1: 8587858273548769720
+      VenusAcid_0006_2: -3445872339967489028
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

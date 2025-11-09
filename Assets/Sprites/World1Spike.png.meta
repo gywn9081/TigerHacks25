@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7935accc23e541f4fba532ffeb10f76d
+guid: bb0ebbf70c4022646b193af9a0963ff1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9048816497546619378
-    second: LaserEnd_0009_0
+      213: -8506568253206811278
+    second: World1Spike_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LaserEnd_0009_0
+      name: World1Spike_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e061a0296552c6280800000000000000
-      internalID: -9048816497546619378
+      spriteID: 27d2ef15e3992f980800000000000000
+      internalID: -8506568253206811278
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      LaserEnd_0009_0: -9048816497546619378
+      World1Spike_0: -8506568253206811278
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
