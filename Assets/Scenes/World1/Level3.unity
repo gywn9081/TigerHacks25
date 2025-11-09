@@ -3031,7 +3031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cccbc5ba106718489b34f2581f756c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RocketLaunch
-  sceneAsset: {fileID: 102900000, guid: e1dfe2d9dec7138459495e43db5a90e6, type: 3}
+  sceneAsset: {fileID: 102900000, guid: c4f2caab5638a4440b41190bdcc8a4a7, type: 3}
   nextSceneName: Level1world2
   requiresCheckpoint: 1
   requiresAllPlayers: 1
@@ -4077,11 +4077,8 @@ SceneRoots:
   - {fileID: 2000228264}
   - {fileID: 178876617}
   - {fileID: 727676480}
-  - {fileID: 669188942}
   - {fileID: 310203887}
   - {fileID: 32505454}
   - {fileID: 2105831894}
   - {fileID: 326453588}
-  - {fileID: 32505454}
-  - {fileID: 2105831894}
   - {fileID: 1533892225}
