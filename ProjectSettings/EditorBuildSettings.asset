@@ -38,6 +38,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/World2/Level1world2.unity
     guid: e1dfe2d9dec7138459495e43db5a90e6
+  - enabled: 1
+    path: Assets/Scenes/World3/Level1World3.unity
+    guid: 4096da02addf57941829ccc4c6825af6
+  - enabled: 1
+    path: Assets/Scenes/World3/Level2World3.unity
+    guid: 60741f476d478a44caa6cc25b149bd7b
+  - enabled: 1
+    path: Assets/Scenes/World3/Level3World3.unity
+    guid: a663ea5e42efc47449f85e70809d4556
+  - enabled: 1
+    path: Assets/Scenes/World3/YOUWON!!!.unity
+    guid: ba42ba854dab0d34599d5cbb66a9c8b1
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
