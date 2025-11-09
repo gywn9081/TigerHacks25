@@ -1,90 +1,51 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
-using System;
 using System.Collections.Generic;
-
-
 
 public class PlayerSpawner : MonoBehaviour
 {
     [Header("Player Setup")]
-    [SerializeField] private GameObject playerPrefab;
-    [SerializeField] private int maxPlayers = 4;
+    [SerializeField] private GameObject[] playerPrefabs;
+    [SerializeField] private int maxPlayers = 2; // Changed to 2
 
     [Header("Spawn Positions")]
     [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
 
-    [Header("Player Colors")]
-    [SerializeField]
-    private List<Color> playerColors = new List<Color>()
-    {
-        Color.red,
-        Color.blue,
-        Color.green,
-        Color.yellow
-    };
-
     [Header("Keyboard Split Support")]
     [SerializeField] private bool allowKeyboardSplit = true;
-    [SerializeField] private int maxKeyboardPlayers = 3; // WASD, Arrow Keys, Numpad
 
-    [Header("Manual Join Settings")]
-    [SerializeField] private bool useManualJoining = false;
-
-    private UnityEngine.InputSystem.PlayerInputManager inputManager;
     private List<GameObject> activePlayers = new List<GameObject>();
 
     void Awake()
     {
-        // Get or add Unity's PlayerInputManager component
-        inputManager = GetComponent<UnityEngine.InputSystem.PlayerInputManager>();
-        if (inputManager == null)
-        {
-            inputManager = gameObject.AddComponent<UnityEngine.InputSystem.PlayerInputManager>();
-        }
-
-        // Configure the PlayerInputManager
-        inputManager.playerPrefab = playerPrefab;
-        inputManager.joinBehavior = PlayerJoinBehavior.JoinPlayersManually;
         DeathSystem.OnAnyPlayerDied += HandlePlayerDeath;
     }
 
     void Start()
     {
         // Pre-spawn keyboard players if split keyboard is enabled
-        if (allowKeyboardSplit && !useManualJoining)
+        if (allowKeyboardSplit)
         {
-            Debug.Log("Key board split enabled letting in players");
+            Debug.Log("Keyboard split enabled, spawning players");
             StartCoroutine(SpawnKeyboardPlayers());
         }
     }
 
-
     void Update()
     {
-        // Check for players trying to join
+        // Check for players trying to join manually
         if (activePlayers.Count < maxPlayers)
         {
             // Player 1 - Spacebar
-            if (Keyboard.current.spaceKey.wasPressedThisFrame && !HasPlayerWithScheme("Keyboard1"))
+            if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame && !HasPlayerWithScheme("Keyboard1"))
             {
                 StartCoroutine(SpawnPlayerWithScheme("Keyboard1", 0));
             }
             // Player 2 - Enter
-            else if (Keyboard.current.enterKey.wasPressedThisFrame && !HasPlayerWithScheme("Keyboard2"))
+            else if (Keyboard.current != null && Keyboard.current.enterKey.wasPressedThisFrame && !HasPlayerWithScheme("Keyboard2"))
             {
                 StartCoroutine(SpawnPlayerWithScheme("Keyboard2", 1));
-            }
-            // Player 3 - Numpad Enter
-            else if (Keyboard.current.numpadEnterKey.wasPressedThisFrame && !HasPlayerWithScheme("Numpad"))
-            {
-                StartCoroutine(SpawnPlayerWithScheme("Numpad", 2));
-            }
-            // Player 4 - Gamepad Start
-            else if (Gamepad.current != null && Gamepad.current.startButton.wasPressedThisFrame && !HasPlayerWithScheme("Gamepad"))
-            {
-                StartCoroutine(SpawnPlayerWithScheme("Gamepad", 3));
             }
         }
     }
@@ -109,15 +70,25 @@ public class PlayerSpawner : MonoBehaviour
 
     IEnumerator SpawnPlayerWithScheme(string schemeName, int playerIndex)
     {
-        if (playerPrefab == null) yield break;
+        if (playerIndex >= playerPrefabs.Length || playerPrefabs[playerIndex] == null)
+        {
+            Debug.LogError($"Player prefab at index {playerIndex} is null!");
+            yield break;
+        }
+
+        GameObject playerPrefab = playerPrefabs[playerIndex];
 
         Vector3 spawnPosition = (playerIndex < spawnPoints.Count && spawnPoints[playerIndex] != null)
             ? spawnPoints[playerIndex].position
             : new Vector3(playerIndex * 3f, 0f, 0f);
 
+        // Instantiate the player
         GameObject player = Instantiate(playerPrefab, spawnPosition, Quaternion.identity);
+        
+        // IMPORTANT: Don't parent to this GameObject - keep it in root
+        player.transform.parent = null;
 
-        yield return null; // Wait for initialization
+        yield return new WaitForEndOfFrame(); // Wait for full initialization
 
         if (player == null)
         {
@@ -125,13 +96,31 @@ public class PlayerSpawner : MonoBehaviour
             yield break;
         }
 
+        // Configure PlayerInput
         PlayerInput playerInput = player.GetComponent<PlayerInput>();
-        if (playerInput != null && playerInput.user.valid)
+        if (playerInput != null)
         {
+            // Disable PlayerInput temporarily to prevent auto-switching
+            playerInput.DeactivateInput();
+            
             // Switch to the appropriate control scheme
-            InputDevice device = (schemeName == "Gamepad") ? (InputDevice)Gamepad.current : Keyboard.current;
-            playerInput.SwitchCurrentControlScheme(schemeName, device);
+            InputDevice device = (schemeName == "Gamepad" && Gamepad.current != null) 
+                ? (InputDevice)Gamepad.current 
+                : Keyboard.current;
+            
+            if (device != null)
+            {
+                playerInput.SwitchCurrentControlScheme(schemeName, device);
+            }
+            
             playerInput.neverAutoSwitchControlSchemes = true;
+            
+            // Re-enable input
+            playerInput.ActivateInput();
+        }
+        else
+        {
+            Debug.LogWarning($"Player {playerIndex + 1} missing PlayerInput component!");
         }
 
         string controlName = GetControlDisplayName(schemeName);
@@ -141,10 +130,6 @@ public class PlayerSpawner : MonoBehaviour
         if (controller != null)
         {
             controller.SetPlayerNumber(activePlayers.Count + 1);
-            if (activePlayers.Count < playerColors.Count)
-            {
-                controller.SetPlayerColor(playerColors[activePlayers.Count]);
-            }
         }
 
         activePlayers.Add(player);
@@ -163,61 +148,65 @@ public class PlayerSpawner : MonoBehaviour
         }
     }
 
-
-    System.Collections.IEnumerator SpawnKeyboardPlayers()
+    IEnumerator SpawnKeyboardPlayers()
     {
-        // Wait a frame for everything to initialize
-        yield return null;
+        // Wait for scene to fully initialize
+        yield return new WaitForEndOfFrame();
 
-        // Spawn keyboard players directly without using PlayerInputManager
-        for (int i = 0; i < Mathf.Min(maxKeyboardPlayers, maxPlayers); i++)
+        // Spawn only 2 keyboard players
+        for (int i = 0; i < Mathf.Min(2, maxPlayers, playerPrefabs.Length); i++)
         {
-            SpawnKeyboardPlayer(i);
-            yield return new WaitForSeconds(0.1f);
+            if (playerPrefabs[i] != null)
+            {
+                SpawnKeyboardPlayer(i);
+                yield return new WaitForSeconds(0.1f);
+            }
+            else
+            {
+                Debug.LogError($"Player prefab at index {i} is null!");
+            }
         }
     }
 
     void SpawnKeyboardPlayer(int index)
     {
-        if (index >= maxPlayers || playerPrefab == null)
+        if (index >= playerPrefabs.Length || playerPrefabs[index] == null)
+        {
+            Debug.LogError($"Cannot spawn player {index}: Prefab is null!");
             return;
+        }
+
+        GameObject playerPrefab = playerPrefabs[index];
 
         // Determine spawn position
-        Vector3 spawnPosition;
-        if (index < spawnPoints.Count && spawnPoints[index] != null)
-        {
-            spawnPosition = spawnPoints[index].position;
-        }
-        else
-        {
-            spawnPosition = new Vector3(index * 3f, 0f, 0f);
-        }
+        Vector3 spawnPosition = (index < spawnPoints.Count && spawnPoints[index] != null)
+            ? spawnPoints[index].position
+            : new Vector3(index * 3f, 0f, 0f);
 
-        // Instantiate directly (bypass PlayerInputManager)
+        // Instantiate directly
         GameObject player = Instantiate(playerPrefab, spawnPosition, Quaternion.identity);
+        
+        // Keep in root hierarchy
+        player.transform.parent = null;
 
         // Determine control scheme and name
-        string schemeName = "Keyboard1";
-        string controlName = "WASD";
-        if (index == 1)
-        {
-            schemeName = "Keyboard2";
-            controlName = "Arrow Keys";
-        }
-        else if (index == 2)
-        {
-            schemeName = "Numpad";
-            controlName = "Numpad 8246";
-        }
+        string schemeName = index == 0 ? "Keyboard1" : "Keyboard2";
+        string controlName = index == 0 ? "WASD" : "Arrow Keys";
 
         player.name = $"Player {index + 1} ({controlName})";
 
-        // Configure PlayerInput to use specific control scheme
+        // Configure PlayerInput
         PlayerInput playerInput = player.GetComponent<PlayerInput>();
-        if (playerInput != null)
+        if (playerInput != null && Keyboard.current != null)
         {
-            playerInput.SwitchCurrentControlScheme(schemeName, UnityEngine.InputSystem.Keyboard.current);
-            playerInput.neverAutoSwitchControlSchemes = true; // Lock to this scheme
+            playerInput.DeactivateInput();
+            playerInput.SwitchCurrentControlScheme(schemeName, Keyboard.current);
+            playerInput.neverAutoSwitchControlSchemes = true;
+            playerInput.ActivateInput();
+        }
+        else if (playerInput == null)
+        {
+            Debug.LogWarning($"Player {index + 1} missing PlayerInput component!");
         }
 
         // Configure PlayerController
@@ -225,38 +214,12 @@ public class PlayerSpawner : MonoBehaviour
         if (controller != null)
         {
             controller.SetPlayerNumber(index + 1);
-
-            if (index < playerColors.Count)
-            {
-                controller.SetPlayerColor(playerColors[index]);
-            }
         }
 
         activePlayers.Add(player);
         Debug.Log($"Keyboard Player {index + 1} spawned with {controlName}");
     }
 
-    bool IsKeyboardPlayerActive(string schemeName)
-    {
-        foreach (GameObject player in activePlayers)
-        {
-            PlayerInput pi = player.GetComponent<PlayerInput>();
-            if (pi != null && pi.currentControlScheme == schemeName)
-                return true;
-        }
-        return false;
-    }
-
-    void JoinPlayerWithScheme(int controlSchemeIndex)
-    {
-        if (inputManager != null)
-        {
-            PlayerInput.Instantiate(playerPrefab, controlSchemeIndex,
-                pairWithDevice: UnityEngine.InputSystem.Keyboard.current);
-        }
-    }
-
-    // Respawn a player at their spawn point
     public void RespawnPlayer(int playerIndex)
     {
         if (playerIndex >= 0 && playerIndex < activePlayers.Count)
@@ -268,8 +231,6 @@ public class PlayerSpawner : MonoBehaviour
                 Vector3 spawnPosition = (playerIndex < spawnPoints.Count && spawnPoints[playerIndex] != null)
                     ? spawnPoints[playerIndex].position
                     : new Vector3(playerIndex * 3f, 0f, 0f);
-
-                Debug.Log(spawnPoints);
 
                 player.transform.position = spawnPosition;
 
@@ -288,7 +249,6 @@ public class PlayerSpawner : MonoBehaviour
         }
     }
 
-    // Respawn all players
     public void RespawnAllPlayers()
     {
         for (int i = 0; i < activePlayers.Count; i++)
@@ -297,7 +257,6 @@ public class PlayerSpawner : MonoBehaviour
         }
     }
 
-    // Get a specific player
     public GameObject GetPlayer(int playerIndex)
     {
         if (playerIndex >= 0 && playerIndex < activePlayers.Count)
@@ -307,19 +266,16 @@ public class PlayerSpawner : MonoBehaviour
         return null;
     }
 
-    // Get all active players
     public List<GameObject> GetActivePlayers()
     {
         return new List<GameObject>(activePlayers);
     }
 
-    // Get current player count
     public int GetPlayerCount()
     {
         return activePlayers.Count;
     }
 
-    // Remove a specific player
     public void RemovePlayer(int playerIndex)
     {
         if (playerIndex >= 0 && playerIndex < activePlayers.Count)
@@ -330,20 +286,8 @@ public class PlayerSpawner : MonoBehaviour
         }
     }
 
-    // Enable/disable player joining
-    public void SetJoiningEnabled(bool enabled)
-    {
-        if (inputManager != null)
-        {
-            inputManager.joinBehavior = enabled
-                ? PlayerJoinBehavior.JoinPlayersWhenButtonIsPressed
-                : PlayerJoinBehavior.JoinPlayersManually;
-        }
-    }
-
     private void OnDisable()
     {
         DeathSystem.OnAnyPlayerDied -= HandlePlayerDeath;
     }
-
 }
