@@ -6,9 +6,10 @@ public class PlayerController : MonoBehaviour
     [Header("Player Settings")]
     [SerializeField] private int playerNumber = 1;
     [SerializeField] private Color playerColor = Color.white;
-    
+
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float normalSpeed = 5f;
     [SerializeField] private float jumpForce = 10f;
     [SerializeField] public float acceleration = 40f;
 
@@ -31,7 +32,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.2f;
     [SerializeField] private LayerMask groundLayers;
-    [SerializeField] private bool isGrounded;
+    // [SerializeField] private bool isGrounded;
     private Collider2D playerCollider;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -133,14 +134,15 @@ public class PlayerController : MonoBehaviour
     {
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(groundCheck.position, groundCheckRadius, groundLayers);
 
-        isGrounded = false;
+        // isGrounded = false;
 
         foreach (Collider2D collider in hitColliders)
         {
             // If we find any collider that isn't our own, we're on a jumpable surface
             if (collider != playerCollider)
             {
-                isGrounded = true;
+                // isGrounded = true;
+                jumpBootsCooldown = false;
                 break; // Found valid surface, no need to keep checking
             }
         }
@@ -152,10 +154,12 @@ public class PlayerController : MonoBehaviour
         if (isIcy)
         {
             acceleration = normalAcceleration * iceScaling;
+            moveSpeed = normalSpeed * 1 / iceScaling;
         }
         else if (isJumpable)
         {
             acceleration = normalAcceleration;
+            moveSpeed = normalSpeed;
         }
     }
 
