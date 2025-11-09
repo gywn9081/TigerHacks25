@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1252341620902127129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5407216206732509506}
+  m_Layer: 7
+  m_Name: JumpableCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5407216206732509506
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252341620902127129}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6142670149187229735}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1479121755662474910
 GameObject:
   m_ObjectHideFlags: 0
@@ -37,6 +68,8 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1716483764170958627}
+  - {fileID: 5407216206732509506}
+  - {fileID: 7203933923960978717}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3872306517389786821
@@ -113,7 +146,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 3
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e4153c8c502333d02bea0263b512495e, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -226,13 +259,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController_1
   playerNumber: 1
   playerColor: {r: 1, g: 1, b: 1, a: 1}
-  moveSpeed: 7
+  moveSpeed: 5
   jumpForce: 12
-  groundCheck: {fileID: 1716483764170958627}
-  groundCheckRadius: 0.2
+  acceleration: 50
+  normalAcceleration: 50
+  jumpCheck: {fileID: 5407216206732509506}
+  jumpCheckRadius: 0.2
   jumpableLayers:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 1216
+  iceCheck: {fileID: 7203933923960978717}
+  iceCheckRadius: 0.3
+  iceScaling: 0.1
+  iceLayers:
+    serializedVersion: 2
+    m_Bits: 1024
+  groundCheck: {fileID: 1716483764170958627}
+  groundCheckRadius: 0.2
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 1984
+  jumpBoots: 0
 --- !u!114 &1177254335983006675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,7 +296,7 @@ MonoBehaviour:
   detectionBoxOffset: {x: 0, y: 0.49}
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   maxStackDepth: 10
 --- !u!95 &8765397488303723017
 Animator:
@@ -296,6 +343,37 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6690626423935600715}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6142670149187229735}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9150433139425418693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7203933923960978717}
+  m_Layer: 7
+  m_Name: IceSkates
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7203933923960978717
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9150433139425418693}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.15, z: 0}

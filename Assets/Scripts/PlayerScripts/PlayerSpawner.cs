@@ -8,28 +8,6 @@ using System.Collections.Generic;
 
 public class PlayerSpawner : MonoBehaviour
 {
-    // This is the event used by players to indicate that they have died and need the whole team to re-spawn
-    public static event Action OnAnyPlayerDied;
-
-        public static void TriggerPlayerDeath()
-    {
-        Debug.Log("Player died invoking respawn");
-        OnAnyPlayerDied?.Invoke();
-    }
-
-    public void HandlePlayerDeath()
-    {
-        
-        GravityManager.Instance.SetGravity(false);
-        RespawnAllPlayers();
-    }
-
-    /*
-    
-    Done dealing with respawning stuff
-    
-    */
-
     [Header("Player Setup")]
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private int maxPlayers = 4;
@@ -69,7 +47,7 @@ public class PlayerSpawner : MonoBehaviour
         // Configure the PlayerInputManager
         inputManager.playerPrefab = playerPrefab;
         inputManager.joinBehavior = PlayerJoinBehavior.JoinPlayersManually;
-        OnAnyPlayerDied += HandlePlayerDeath;
+        DeathSystem.OnAnyPlayerDied += HandlePlayerDeath;
     }
 
     void Start()
@@ -109,9 +87,12 @@ public class PlayerSpawner : MonoBehaviour
                 StartCoroutine(SpawnPlayerWithScheme("Gamepad", 3));
             }
         }
-        // Log number of players connected
-        // Debug.Log(GetPlayerCount());
-        // Debug.Log("test");
+    }
+
+    public void HandlePlayerDeath()
+    {
+        GravityManager.Instance.SetGravity(false);
+        RespawnAllPlayers();
     }
 
     bool HasPlayerWithScheme(string schemeName)
@@ -358,6 +339,11 @@ public class PlayerSpawner : MonoBehaviour
                 ? PlayerJoinBehavior.JoinPlayersWhenButtonIsPressed
                 : PlayerJoinBehavior.JoinPlayersManually;
         }
+    }
+
+    private void OnDisable()
+    {
+        DeathSystem.OnAnyPlayerDied -= HandlePlayerDeath;
     }
 
 }

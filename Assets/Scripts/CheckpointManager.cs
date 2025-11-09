@@ -29,7 +29,7 @@ public class CheckpointManager : MonoBehaviour
     void Start()
     {
         // Subscribe to player death events
-        PlayerSpawner.OnAnyPlayerDied += OnPlayerDeath;
+        DeathSystem.OnAnyPlayerDied += OnPlayerDeath;
     }
 
     void OnDestroy()
@@ -40,7 +40,7 @@ public class CheckpointManager : MonoBehaviour
         }
 
         // Unsubscribe from events
-        PlayerSpawner.OnAnyPlayerDied -= OnPlayerDeath;
+        DeathSystem.OnAnyPlayerDied -= OnPlayerDeath;
     }
 
     public void ActivateCheckpoint(Checkpoint checkpoint)

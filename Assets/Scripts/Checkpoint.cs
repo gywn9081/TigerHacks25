@@ -33,39 +33,47 @@ public class Checkpoint : MonoBehaviour
             spriteRenderer.color = inactiveColor;
 
         // Subscribe to player death events
-        PlayerSpawner.OnAnyPlayerDied += OnPlayerDeath;
+        DeathSystem.OnAnyPlayerDied += OnPlayerDeath;
     }
 
     void OnDestroy()
     {
         // Unsubscribe from events
-        PlayerSpawner.OnAnyPlayerDied -= OnPlayerDeath;
+        DeathSystem.OnAnyPlayerDied -= OnPlayerDeath;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log($"[Checkpoint] ===== TRIGGER ENTER ===== Object: {other.gameObject.name}");
+
         // Check if a player touched the checkpoint
         PlayerController player = other.GetComponent<PlayerController>();
-        if (player != null && !isActivated)
-        {
-            Debug.Log($"[Checkpoint] Player {player.GetPlayerNumber()} touched checkpoint");
 
-            if (requiresAllPlayers)
-            {
-                Debug.Log("[Checkpoint] Requires ALL players - checking if all present...");
-                // Check if all players are touching the checkpoint
-                CheckAllPlayersTouching();
-            }
-            else
-            {
-                Debug.Log("[Checkpoint] Does NOT require all players - activating immediately");
-                // Activate immediately when any player touches it
-                ActivateCheckpoint();
-            }
-        }
-        else if (player != null && isActivated)
+        if (player == null)
         {
-            Debug.Log($"[Checkpoint] Player {player.GetPlayerNumber()} touched checkpoint, but already activated");
+            Debug.Log($"[Checkpoint] Object '{other.gameObject.name}' does NOT have PlayerController");
+            return;
+        }
+
+        Debug.Log($"[Checkpoint] Player {player.GetPlayerNumber()} touched checkpoint! isActivated={isActivated}");
+
+        if (isActivated)
+        {
+            Debug.Log($"[Checkpoint] Checkpoint already activated, ignoring");
+            return;
+        }
+
+        if (requiresAllPlayers)
+        {
+            Debug.Log("[Checkpoint] Requires ALL players - checking if all present...");
+            // Check if all players are touching the checkpoint
+            CheckAllPlayersTouching();
+        }
+        else
+        {
+            Debug.Log("[Checkpoint] Does NOT require all players - activating immediately");
+            // Activate immediately when any player touches it
+            ActivateCheckpoint();
         }
     }
 
