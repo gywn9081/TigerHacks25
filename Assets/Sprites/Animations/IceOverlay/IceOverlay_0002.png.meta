@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 5e8dfa61907c93840a2e369cec00b42e
+guid: 267d05f410961eb48bb23fc1aa17c30d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4740972993078573766
-    second: RocketFlame_0007_0
+      213: -4427664090096136380
+    second: IceOverlay_0002_0
+  - first:
+      213: 8226607755982858522
+    second: IceOverlay_0002_1
+  - first:
+      213: 1683377082415373458
+    second: IceOverlay_0002_2
+  - first:
+      213: -3904819071392571886
+    second: IceOverlay_0002_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,33 +105,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-=======
->>>>>>> 6ac6f87f6fe40c57532aec01678ce8d8fca40aaa
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RocketFlame_0007_0
+      name: IceOverlay_0002_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 615
         y: 0
-        width: 32
-        height: 32
+        width: 1305
+        height: 540
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ca3b2681d15bc140800000000000000
-      internalID: 4740972993078573766
+      spriteID: 44f011508f6cd82c0800000000000000
+      internalID: -4427664090096136380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0002_1
+      rect:
+        serializedVersion: 2
+        x: 1911
+        y: 535
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a19e4d9ea28ca2270800000000000000
+      internalID: 8226607755982858522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0002_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 617
+        height: 479
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29cd66c998e8c5710800000000000000
+      internalID: 1683377082415373458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceOverlay_0002_3
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 0
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21e99714ebb4fc9c0800000000000000
+      internalID: -3904819071392571886
       vertices: []
       indices: 
       edges: []
@@ -151,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      RocketFlame_0007_0: 4740972993078573766
+      IceOverlay_0002_0: -4427664090096136380
+      IceOverlay_0002_1: 8226607755982858522
+      IceOverlay_0002_2: 1683377082415373458
+      IceOverlay_0002_3: -3904819071392571886
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

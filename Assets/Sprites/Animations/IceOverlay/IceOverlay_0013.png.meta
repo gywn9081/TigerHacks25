@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5e8dfa61907c93840a2e369cec00b42e
+guid: 8d04fbd57923e1d40ad3fbc3dd177975
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4740972993078573766
-    second: RocketFlame_0007_0
+      213: -8607057917438595564
+    second: IceOverlay_0013_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,33 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-=======
->>>>>>> 6ac6f87f6fe40c57532aec01678ce8d8fca40aaa
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RocketFlame_0007_0
+      name: IceOverlay_0013_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ca3b2681d15bc140800000000000000
-      internalID: 4740972993078573766
+      spriteID: 41eebdd1d669d8880800000000000000
+      internalID: -8607057917438595564
       vertices: []
       indices: 
       edges: []
@@ -151,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      RocketFlame_0007_0: 4740972993078573766
+      IceOverlay_0013_0: -8607057917438595564
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
