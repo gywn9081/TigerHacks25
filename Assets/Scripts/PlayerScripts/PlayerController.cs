@@ -17,20 +17,23 @@ public class PlayerController : MonoBehaviour
     
     [Header("Jump Check")]
     [SerializeField] private Transform jumpCheck;
-    [SerializeField] private float jumpCheckRadius = 0.2f;
+    [SerializeField] private Vector2 jumpBarRange;
+    [SerializeField] private float jumpBarAngle = 0f;
     [SerializeField] private LayerMask jumpableLayers;
     [SerializeField] private bool isJumpable;
 
     [Header("Material Conditions")]
     [SerializeField] private Transform iceCheck;
-    [SerializeField] private float iceCheckRadius = 0.2f;
+    [SerializeField] private Vector2 iceBarRange;
+    [SerializeField] private float iceAngle = 0f;
     [SerializeField] private float iceScaling = 0.1f;
     [SerializeField] private LayerMask iceLayers;
     [SerializeField] private bool isIcy;
 
     [Header("Default Material")]
     [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundCheckRadius = 0.2f;
+    [SerializeField] private Vector2 groundBarRange;
+    [SerializeField] private float groundBarAngle = 0f;
     [SerializeField] private LayerMask groundLayers;
     // [SerializeField] private bool isGrounded;
     private Collider2D playerCollider;
@@ -84,8 +87,6 @@ public class PlayerController : MonoBehaviour
     {
         // Check if jumpable
         CheckJumpable();
-        // Check if grounded
-        CheckGrounded();
         // Check if icy
         CheckIcy();
         // Make sure material changes are smooth
@@ -107,7 +108,13 @@ public class PlayerController : MonoBehaviour
     // Jumpable check
     void CheckJumpable()
     {
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(jumpCheck.position, jumpCheckRadius, jumpableLayers);
+        // Replace OverlapCircleAll with OverlapBoxAll
+        Collider2D[] hitColliders = Physics2D.OverlapBoxAll(
+            jumpCheck.position, 
+            jumpBarRange, 
+            jumpBarAngle, 
+            jumpableLayers
+        );
 
         isJumpable = false;
 
@@ -126,27 +133,31 @@ public class PlayerController : MonoBehaviour
     // Icy check
     void CheckIcy()
     {
-        isIcy = Physics2D.OverlapCircle(iceCheck.position, iceCheckRadius, iceLayers);
+        isIcy = Physics2D.OverlapBox(iceCheck.position, iceBarRange, iceAngle, iceLayers);
     }
 
     // Check for materials that don't have special properties
-    void CheckGrounded()
-    {
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(groundCheck.position, groundCheckRadius, groundLayers);
+    // void CheckGrounded()
+    // {
+    //     Collider2D[] hitColliders = Physics2D.OverlapBoxAll(
+    //         groundCheck.position, 
+    //         groundBarRange, 
+    //         groundBarAngle, 
+    //         groundableLayers
+    //     );
 
-        // isGrounded = false;
+    //     // isGrounded = false;
 
-        foreach (Collider2D collider in hitColliders)
-        {
-            // If we find any collider that isn't our own, we're on a jumpable surface
-            if (collider != playerCollider)
-            {
-                // isGrounded = true;
-                jumpBootsCooldown = false;
-                break; // Found valid surface, no need to keep checking
-            }
-        }
-    }
+    //     foreach (Collider2D collider in hitColliders)
+    //     {
+    //         // If we find any collider that isn't our own, we're on a jumpable surface
+    //         if (collider != playerCollider)
+    //         {
+    //             // isGrounded = true;
+    //             break; // Found valid surface, no need to keep checking
+    //         }
+    //     }
+    // }
 
     // Smooth acceleration changing so when jumping don't accelerate fast
     void SpeedSmoothing()
@@ -209,10 +220,10 @@ public class PlayerController : MonoBehaviour
     // Visualize ground check in editor
     void OnDrawGizmosSelected()
     {
-        if (groundCheck != null)
+        if (jumpCheck != null)
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+            Gizmos.DrawWireCube(jumpCheck.position, new Vector3(jumpBarRange.x, jumpBarRange.y, 0f));
         }
     }
     
