@@ -350,8 +350,8 @@ MonoBehaviour:
   nextSceneName: 
   requiresCheckpoint: 1
   requiresAllPlayers: 1
-  lockedColor: {r: 1, g: 0, b: 0, a: 1}
-  unlockedColor: {r: 0, g: 1, b: 0, a: 1}
+  lockedColor: {r: 1, g: 1, b: 1, a: 1}
+  unlockedColor: {r: 1, g: 1, b: 1, a: 1}
   spriteRenderer: {fileID: 0}
   unlockParticles: {fileID: 0}
   unlockSound: {fileID: 0}
