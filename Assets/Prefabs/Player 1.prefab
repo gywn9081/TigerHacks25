@@ -259,14 +259,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController_1
   playerNumber: 1
   playerColor: {r: 1, g: 1, b: 1, a: 1}
+  moveSpeed: 5
+  jumpForce: 12
   acceleration: 50
   normalAcceleration: 50
   jumpCheck: {fileID: 5407216206732509506}
   jumpCheckRadius: 0.2
-  moveSpeed: 7
-  jumpForce: 12
-  groundCheck: {fileID: 1716483764170958627}
-  groundCheckRadius: 0.2
   jumpableLayers:
     serializedVersion: 2
     m_Bits: 1216
@@ -281,6 +279,7 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 1984
+  jumpBoots: 0
 --- !u!114 &1177254335983006675
 MonoBehaviour:
   m_ObjectHideFlags: 0
